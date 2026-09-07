@@ -39,3 +39,5 @@ DNS uses the existing GitHub Pages apex A records and `www` CNAME pointing to `0
 - `/personal/` redirects to `/about/`. A custom 404 provides recovery links.
 
 The local EB Garamond font is distributed under the SIL Open Font License; see `public/fonts/OFL.txt`.
+
+The project screenshot in `public/images/deepwoken-market.png` was captured from the public [Deepwoken.trade item market](https://deepwoken.trade/items) on September 7, 2026. It is served locally, with a dated caption and a full-size link on the project page.

@@ -14,10 +14,10 @@ export function createSculpture(canvas, { reducedMotion = false } = {}) {
 
   function render() {
     context.clearRect(0, 0, width, height);
-    const mobile = width <= 700;
-    const scale = mobile ? Math.min(width / 740, .65) : Math.min(width / 1350, 1.3);
-    const centerX = mobile ? width * .76 : width * .775;
-    const centerY = mobile ? 238 : Math.min(height * .47, 485);
+    const mobile = width <= 704;
+    const scale = mobile ? Math.min(height / 740, .13) : Math.min(width / 1900, height / 780, .8);
+    const centerX = mobile ? width * .85 : width * .80;
+    const centerY = height * .46;
     const breath = Math.sin(time * .16) * .012;
     context.save();
     context.translate(centerX + pointerX * 13, centerY + pointerY * 9);
@@ -57,7 +57,8 @@ export function createSculpture(canvas, { reducedMotion = false } = {}) {
   }
   function start() { if (!frame && !hidden && !paused && !destroyed) frame = requestAnimationFrame(loop); }
   function resize() {
-    width = window.innerWidth; height = window.innerHeight;
+    width = canvas.clientWidth || window.innerWidth;
+    height = canvas.clientHeight || window.innerHeight;
     const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
     canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio);
     context.setTransform(ratio, 0, 0, ratio, 0, 0);render();
@@ -77,7 +78,7 @@ export function createSculpture(canvas, { reducedMotion = false } = {}) {
   document.addEventListener('visibilitychange', visibility);
   resize(); start();
   return {
-    setPage(key) { targetPose = poses[key] ?? 0; if (paused) { pose = targetPose; render(); } },
+    setPage(key) { targetPose = poses[key] ?? 0; if (paused) pose = targetPose; resize(); },
     setPaused(value) { paused = value; if (paused) { cancelAnimationFrame(frame); frame = 0; pose = targetPose; render(); } else start(); },
     destroy() { destroyed = true; cancelAnimationFrame(frame); window.removeEventListener('resize', resize); window.removeEventListener('pointermove', move); document.documentElement.removeEventListener('pointerleave', leave); document.removeEventListener('visibilitychange', visibility); },
   };

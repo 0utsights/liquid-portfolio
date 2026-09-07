@@ -46,7 +46,7 @@ test('Pages carry usable content, unique titles, canonical URLs, and a single ma
 test('Research plans remain explicit, and every external contribution links to a merged PR',async()=>{
  const research=await readFile(join(dist,'research/index.html'),'utf8');
  assert.match(research,/one of three student groups under faculty supervision/);
- assert.match(research,/These are planned responsibilities/);
+ assert.match(research,/<strong>Planned work:<\/strong> system testing, evaluation, and preparation for publication/);
  const work=await readFile(join(dist,'work/index.html'),'utf8');
  for(const reference of ['microsoft/PowerToys/pull/49402','NASA-AMMOS/MMGIS/pull/1029','unhappychoice/gittype/pull/478','pingdotgg/t3code/pull/4133','omnigent-ai/omnigent/pull/3661'])assert.ok(work.includes(reference));
  const pdf=await readFile(join(dist,'John-Surles-Resume.pdf'));assert.equal(pdf.subarray(0,4).toString(),'%PDF');
