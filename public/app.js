@@ -1,4 +1,5 @@
 import { createSculpture } from './sculpture.js';
+import { createContextualHeader } from './header.js';
 
 const root = document.documentElement;
 const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
@@ -27,6 +28,7 @@ motionButton.addEventListener('click', () => {
 });
 motionPreference.addEventListener('change', event => { motionPaused = event.matches; updateMotion(); });
 updateMotion();
+const contextualHeader = createContextualHeader(document.querySelector('.site-header'));
 
 // Original, short selection tones. Sound always requires an explicit gesture.
 let audioContext, soundEnabled = false;
@@ -112,6 +114,7 @@ async function navigate(url, { pop = false, position = null } = {}) {
       if (link.getAttribute('href') === paths[active]) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
     });
     main.focus({ preventScroll: true }); scrollTarget(url, position);
+    contextualHeader.refresh();
     if (!reduced()) {
       const animation = main.animate([{ opacity: .1, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 340, easing: 'cubic-bezier(.2,.8,.2,1)' });
       activeAnimations.add(animation); animation.finished.catch(()=>{}).finally(()=>activeAnimations.delete(animation));

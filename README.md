@@ -4,6 +4,8 @@ A lightweight, fully static portfolio for [johnsurles.com](https://johnsurles.co
 
 Seven pre-rendered pages cover an overview, work, research, about, and three project case studies. The site includes an original continuous Canvas line sculpture, progressively enhanced navigation, optional synthesized selection tones, and a downloadable résumé.
 
+The overview owns the project index. Work expands the internship and open-source contributions; About contains education and skills. Project titles open the case studies, whose return links lead back to the overview's project section.
+
 ## Local development
 
 Requires Node.js 22 or later. There are no third-party JavaScript dependencies.
@@ -33,6 +35,7 @@ DNS uses the existing GitHub Pages apex A records and `www` CNAME pointing to `0
 - Real HTML routes and links work without JavaScript.
 - Browser Back and Forward restore route and scroll position.
 - Keyboard navigation, a skip link, focus handling, and reduced-motion support are included.
+- Header identity and contact controls appear when the overview's contact block leaves view, and on pages without that block. An IntersectionObserver updates visibility at the boundary; no per-scroll measurements or animation loop are added. The fixed tray fades without moving navigation or content. Hidden controls are inert, and a focused tray stays visible until focus leaves it.
 - The full-viewport line sculpture uses a fresh bounded random seed on each page load and keeps the same form across enhanced navigation.
 - Curve geometry is calculated once and cached. The canvas draws once initially and after a debounced size change; scrolling, pointer movement, and navigation do not redraw it or recalculate geometry.
 - Gentle motion uses only a CSS transform of the cached canvas. There is no JavaScript animation loop. Motion pauses in hidden tabs and respects the pause control and reduced-motion preference. Touch devices and data-saving connections start still unless a visitor has enabled motion.
