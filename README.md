@@ -34,7 +34,8 @@ DNS uses the existing GitHub Pages apex A records and `www` CNAME pointing to `0
 - Browser Back and Forward restore route and scroll position.
 - Keyboard navigation, a skip link, focus handling, and reduced-motion support are included.
 - Motion can be paused; background drawing stops when the tab is hidden.
-- The line renderer caps drawing at 30 frames per second and device pixel ratio at 1.5.
+- The full-viewport line sculpture uses a fresh bounded random seed on each page load, keeps the same form across enhanced navigation, and slowly responds to scrolling. Paused and reduced-motion views remain still.
+- The line renderer caps drawing at 30 frames per second (24 on small screens), reduces curve count on mobile, and caps device pixel ratio at 1.5.
 - Sound is off by default and starts only after a visitor explicitly enables it. No autoplay music, trackers, cookies, or third-party runtime scripts.
 - `/personal/` redirects to `/about/`. A custom 404 provides recovery links.
 

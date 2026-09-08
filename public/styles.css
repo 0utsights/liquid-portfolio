@@ -9,7 +9,7 @@
   color-scheme: light;
   --paper: #e9e7e0;
   --ink: #272b28;
-  --muted: #5e645e;
+  --muted: #535951;
   --rule: #bec1b8;
   --accent: #455c4b;
   --font-sans: Arial, Helvetica, sans-serif;
@@ -59,12 +59,10 @@ main { flex: 1 0 auto; }
 .header-contact { font-size: .875rem; display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: underline; text-underline-offset: .4em; text-decoration-color: var(--rule); }
 .header-contact:hover { text-decoration-color: var(--ink); }
 
-/* The sculpture sits beside the opening copy and scrolls away with it. */
-.ambient { position: absolute; top: 6.5rem; left: 50%; transform: translateX(-50%); width: 100%; max-width: var(--container); height: 30rem; z-index: -1; pointer-events: none; overflow: hidden; mask-image: linear-gradient(#000 85%, transparent); }
+/* A quiet, continuous field across every route, independent of content height. */
+.ambient { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; opacity: .20; }
 #sculpture { width: 100%; height: 100%; display: block; }
-.ambient-shade { position: absolute; inset: 0; background: linear-gradient(90deg, var(--paper) 0%, var(--paper) 48%, #e9e7e0dd 58%, transparent 74%); }
-html:not([data-page=home]) .ambient { height: 14rem; opacity: .38; }
-html:not([data-page=home]) .ambient-shade { background: linear-gradient(90deg, var(--paper) 0%, var(--paper) 53%, #e9e7e0cc 66%, transparent 85%); }
+.ambient-shade { position: absolute; inset: 0; background: radial-gradient(ellipse at 40% 40%, #e9e7e0cc 10%, #e9e7e099 58%, #e9e7e066 100%); }
 .hero { padding: 2rem 0 3rem; position: relative; }
 .hero-copy { max-width: 37.5rem; width: 59%; }
 .hero-description { font-size: 1.0625rem; margin: 1.25rem 0 0; }
@@ -161,7 +159,6 @@ html:not([data-page=home]) .ambient-shade { background: linear-gradient(90deg, v
 @media (max-width: 65rem) {
   .header-contact { display: none; }
   .hero-copy { width: 69%; }
-  .ambient-shade { background: linear-gradient(90deg, var(--paper) 0%, var(--paper) 57%, #e9e7e0cc 70%, transparent 90%); }
   .project-row, .experience, .oss-row, .skill-row { gap: 2rem; }
   .education-row { flex-wrap: wrap; gap: .75rem 2rem; }
   .education-date { align-items: flex-start; }
@@ -170,8 +167,7 @@ html:not([data-page=home]) .ambient-shade { background: linear-gradient(90deg, v
   .site-header { padding-top: 1rem; padding-bottom: 0; min-height: 0; flex-direction: column; gap: .5rem; align-items: flex-start; }
   .main-nav { align-self: stretch; justify-content: space-between; }
   .main-nav a { padding: .625rem .75rem; flex: 1; }
-  .ambient, html:not([data-page=home]) .ambient { top: 0; height: 4.25rem; opacity: .8; mask-image: none; }
-  .ambient-shade, html:not([data-page=home]) .ambient-shade { background: linear-gradient(90deg, var(--paper) 35%, transparent 80%); }
+  .ambient { opacity: .17; }
   .hero { padding: 1.75rem 0 2rem; }
   .hero-copy { width: 100%; max-width: none; }
   .hero .eyebrow { margin-bottom: .75rem; font-size: .75rem; }
