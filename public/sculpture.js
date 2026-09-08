@@ -1,9 +1,8 @@
-/** Seeded, continuous line sculpture. One composition per page load, shared by routes. */
+/** Seeded geometry is calculated once. Motion only transforms the cached canvas. */
 export function createSculpture(canvas, { reducedMotion = false, seed = Math.random() * 4294967296 } = {}) {
   const context = canvas.getContext('2d', { alpha: true });
-  if (!context) return { setPage() {}, setPaused() {}, destroy() {} };
+  if (!context) return { setPaused() {}, destroy() {} };
 
-  // Randomize bounded shape parameters once, never individual animation frames.
   let state = seed >>> 0;
   function random() {
     state = (state + 0x6D2B79F5) | 0;
@@ -21,111 +20,76 @@ export function createSculpture(canvas, { reducedMotion = false, seed = Math.ran
     center: .52 + random() * .08,
     offset: (random() - .5) * .06,
   };
-  const samples = 96;
+  const count = 120, samples = 96;
   const angles = Array.from({ length: samples + 1 }, (_, j) => {
     const a = j / samples * Math.PI * 2;
     return { a, sin: Math.sin(a), cos: Math.cos(a), cos2: Math.cos(a * 2) };
   });
-  const poses = { home: 0, work: .35, project: .65, research: 1, about: 1.3 };
-  let width = 0, height = 0, frame = 0, previous = 0, time = 0;
-  let pointerX = 0, pointerY = 0, aimX = 0, aimY = 0, pose = 0, targetPose = 0;
-  let progress = 0, targetProgress = 0;
-  let paused = reducedMotion, hidden = document.hidden, destroyed = false;
+  const curves = Array.from({ length: count }, (_, i) => {
+    const t = i / (count - 1);
+    const points = new Float32Array((samples + 1) * 2);
+    for (let j = 0; j <= samples; j++) {
+      const { a, sin, cos, cos2 } = angles[j];
+      const fold = Math.sin(a * 3 + t * 2 + shape.phase) * shape.fold;
+      const radius = 143 + t * 132 + fold;
+      points[j * 2] = cos * radius * (.87 + .18 * sin) + Math.sin(a * 2 + t + shape.phase * .35) * shape.twist;
+      points[j * 2 + 1] = sin * radius * shape.stretch + cos2 * 49 + (t - .5) * 98;
+    }
+    const highlight = Math.pow(Math.sin(t * Math.PI * 2.6 + shape.phase * .15), 2);
+    const shade = Math.round(67 + highlight * 110);
+    return { points, color: `rgba(${shade},${shade + 3},${shade},${.55 + (1 - highlight) * .14})` };
+  });
 
-  function scroll() {
-    if (paused) return;
-    const distance = Math.max(1, (document.documentElement.scrollHeight || height) - height);
-    targetProgress = Math.max(0, Math.min(1, (window.scrollY || 0) / distance));
-  }
+  let paused = reducedMotion, destroyed = false, resizeTimer;
+  let lastWidth = 0, lastHeight = 0, lastRatio = 0;
   function render() {
+    if (destroyed) return;
+    const width = canvas.clientWidth || window.innerWidth;
+    const height = canvas.clientHeight || window.innerHeight;
+    if (!width || !height) return;
+    // This low-contrast background does not need a full-resolution 4K texture.
+    const ratio = Math.min(window.devicePixelRatio || 1, 1.25, Math.sqrt(1600000 / (width * height)));
+    if (width === lastWidth && height === lastHeight && ratio === lastRatio) return;
+    lastWidth = width; lastHeight = height; lastRatio = ratio;
+    canvas.width = Math.max(1, Math.floor(width * ratio));
+    canvas.height = Math.max(1, Math.floor(height * ratio));
+    context.setTransform(canvas.width / width, 0, 0, canvas.height / height, 0, 0);
     context.clearRect(0, 0, width, height);
-    const mobile = width <= 704;
-    const count = mobile ? 80 : 120;
-    const scale = Math.max(width / 820, height / 830);
-    const centerX = width * (shape.center + Math.sin(progress * Math.PI) * .035);
-    const centerY = height * (.47 + shape.offset - progress * .045);
-    const phase = shape.phase + pose * .22 + time * .018;
-    const breath = 1 + Math.sin(time * .12 + shape.phase) * .008;
     context.save();
-    context.translate(centerX + pointerX * 8, centerY + pointerY * 5);
-    context.rotate(shape.rotation + pose * .065 + progress * .08 + Math.sin(time * .04) * .018);
+    context.translate(width * shape.center, height * (.47 + shape.offset));
+    context.rotate(shape.rotation);
+    const scale = Math.max(width / 820, height / 830);
     context.scale(scale * shape.spread, scale);
-    for (let i = 0; i < count; i++) {
-      const t = i / (count - 1);
+    const visibleCount = width <= 704 ? 80 : count;
+    for (let i = 0; i < visibleCount; i++) {
+      const { points, color } = curves[Math.round(i * (count - 1) / (visibleCount - 1))];
       context.beginPath();
-      for (let j = 0; j <= samples; j++) {
-        const { a, sin, cos, cos2 } = angles[j];
-        const fold = Math.sin(a * 3 + t * 2 + phase) * shape.fold;
-        const radius = (143 + t * 132 + fold) * breath;
-        const px = cos * radius * (.87 + .18 * sin) + Math.sin(a * 2 + t + phase * .35) * shape.twist;
-        const py = sin * radius * shape.stretch + cos2 * 49 + (t - .5) * 98;
-        if (j === 0) context.moveTo(px, py); else context.lineTo(px, py);
-      }
-      const highlight = Math.pow(Math.sin(t * Math.PI * 2.6 + phase * .15), 2);
-      const shade = Math.round(67 + highlight * 110);
-      context.strokeStyle = `rgba(${shade},${shade + 3},${shade},${.55 + (1 - highlight) * .14})`;
+      context.moveTo(points[0], points[1]);
+      for (let j = 2; j < points.length; j += 2) context.lineTo(points[j], points[j + 1]);
+      context.strokeStyle = color;
       context.lineWidth = .72;
       context.stroke();
     }
     context.restore();
   }
-  function loop(now) {
-    frame = 0;
-    if (destroyed || hidden || paused) return;
-    // Cap drawing at 30 fps on desktop and 24 fps on small screens.
-    if (now - previous >= (width <= 704 ? 41 : 32)) {
-      const dt = Math.min((now - previous) / 1000, .05);
-      time += dt; previous = now;
-      pointerX += (aimX - pointerX) * .10; pointerY += (aimY - pointerY) * .10;
-      pose += (targetPose - pose) * .055;
-      progress += (targetProgress - progress) * .055;
-      render();
-    }
-    frame = requestAnimationFrame(loop);
-  }
-  function start() {
-    if (!frame && !hidden && !paused && !destroyed) {
-      previous = performance.now();
-      frame = requestAnimationFrame(loop);
-    }
-  }
   function resize() {
-    width = canvas.clientWidth || window.innerWidth;
-    height = canvas.clientHeight || window.innerHeight;
-    const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
-    canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio);
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
-    scroll(); render();
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(render, 180);
   }
-  function move(event) {
-    if (event.pointerType === 'touch' || paused) return;
-    aimX = event.clientX / width - .5; aimY = event.clientY / height - .5;
-  }
-  function leave() { aimX = 0; aimY = 0; }
-  function visibility() {
-    hidden = document.hidden;
-    if (hidden) { cancelAnimationFrame(frame); frame = 0; } else start();
+  function updateMotion() {
+    canvas.style.animationPlayState = paused || document.hidden ? 'paused' : 'running';
   }
   window.addEventListener('resize', resize, { passive: true });
-  window.addEventListener('scroll', scroll, { passive: true });
-  window.addEventListener('pointermove', move, { passive: true });
-  document.documentElement.addEventListener('pointerleave', leave);
-  document.addEventListener('visibilitychange', visibility);
-  resize(); start();
+  document.addEventListener('visibilitychange', updateMotion);
+  render(); updateMotion();
   return {
-    setPage(key) { targetPose = poses[key] ?? 0; if (paused) pose = targetPose; scroll(); render(); },
-    setPaused(value) {
-      paused = value;
-      if (paused) { cancelAnimationFrame(frame); frame = 0; }
-      else { scroll(); start(); }
-    },
+    setPaused(value) { if (!destroyed) { paused = value; updateMotion(); } },
     destroy() {
-      destroyed = true; cancelAnimationFrame(frame);
+      destroyed = true;
+      window.clearTimeout(resizeTimer);
+      canvas.style.animationPlayState = 'paused';
       window.removeEventListener('resize', resize);
-      window.removeEventListener('scroll', scroll);
-      window.removeEventListener('pointermove', move);
-      document.documentElement.removeEventListener('pointerleave', leave);
-      document.removeEventListener('visibilitychange', visibility);
+      document.removeEventListener('visibilitychange', updateMotion);
     },
   };
 }

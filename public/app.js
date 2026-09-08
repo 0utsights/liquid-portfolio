@@ -2,10 +2,14 @@ import { createSculpture } from './sculpture.js';
 
 const root = document.documentElement;
 const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
-let motionPaused = motionPreference.matches;
-try { motionPaused ||= localStorage.getItem('portfolio-motion') === 'paused'; } catch { /* Private browsing may disable storage. */ }
+// Keep the default light on touch devices and data-saving connections.
+let motionPaused = motionPreference.matches || matchMedia('(pointer: coarse)').matches || navigator.connection?.saveData === true;
+try {
+  const savedMotion = localStorage.getItem('portfolio-motion');
+  if (!motionPreference.matches && savedMotion === 'playing') motionPaused = false;
+  if (savedMotion === 'paused') motionPaused = true;
+} catch { /* Private browsing may disable storage. */ }
 const sculpture = createSculpture(document.getElementById('sculpture'), { reducedMotion: motionPaused });
-sculpture.setPage(root.dataset.page);
 const motionButton = document.getElementById('motion-toggle');
 const soundButton = document.getElementById('sound-toggle');
 document.querySelector('.preferences').hidden = false;
@@ -107,7 +111,6 @@ async function navigate(url, { pop = false, position = null } = {}) {
     document.querySelectorAll('.main-nav a').forEach(link => {
       if (link.getAttribute('href') === paths[active]) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
     });
-    sculpture.setPage(root.dataset.page);
     main.focus({ preventScroll: true }); scrollTarget(url, position);
     if (!reduced()) {
       const animation = main.animate([{ opacity: .1, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 340, easing: 'cubic-bezier(.2,.8,.2,1)' });
