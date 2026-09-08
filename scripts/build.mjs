@@ -17,7 +17,7 @@ const projectRows = projects.map(p=>`<article class="project-row"><div class="pr
 const ossRows = contributions.map(c=>`<article class="oss-row"><div><span class="meta">${c.tech}</span><h3>${c.name}</h3><a class="pr-link" href="https://github.com/${c.repo}/pull/${c.number}" target="_blank" rel="noopener noreferrer">Merged PR #${c.number}</a></div><div><p>${c.detail}</p></div></article>`).join('');
 
 const home = `<section class="hero" aria-labelledby="intro-name">
- <div class="hero-copy"><p class="eyebrow">Software engineering internships</p><h1 id="intro-name">John Surles</h1><p class="hero-description">Virginia Tech · B.S. Computer Science<br><span>Expected graduation · May 2028</span><span>Blacksburg, Virginia</span></p></div>
+ <div class="hero-copy"><h1 id="intro-name">John Surles</h1><p class="hero-description">Virginia Tech · B.S. Computer Science<br><span>Expected graduation · May 2028</span><span>Blacksburg, Virginia</span></p></div>
  <div class="hero-contact" aria-label="Contact and resume"><a class="contact-email" href="mailto:surlesjohn@outlook.com">surlesjohn@outlook.com</a><div class="hero-actions"><a class="button" href="/John-Surles-Resume.pdf">Resume <span class="file-label">PDF</span></a>${ext('LinkedIn','https://www.linkedin.com/in/john-surles-650a16389/')}${ext('GitHub','https://github.com/0utsights')}</div></div>
 </section>
 <section class="home-highlights" aria-label="Experience, open source, and research">
