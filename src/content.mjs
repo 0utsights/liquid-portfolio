@@ -1,7 +1,7 @@
 export const projects = [
   {
     slug: 'deepwoken-trade', number: '01', title: 'Deepwoken.trade', category: 'Full-stack application', date: 'June 2026 — Present',
-    summary: 'Player-to-player marketplace with verified accounts, trade requests, and reputation.',
+    summary: 'Trading marketplace serving 1,000+ users, with verified accounts, trade requests, and reputation.',
     stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Docker'],
     contribution: ['Built trade listings, item markets, reputation profiles, and trade requests.', 'Added Discord OAuth, Roblox verification, and PostgreSQL persistence through Prisma.', 'Deployed with Docker, AWS, Terraform, and GitHub Actions; later migrated to Oracle Cloud and Supabase PostgreSQL.'],
     links: [['Live site', 'https://deepwoken.trade']],
@@ -16,12 +16,14 @@ export const projects = [
   },
   {
     slug: 'legendwatch', number: '03', title: 'LegendWatch', category: 'Real-time systems · Game mod', date: 'March 2026 — Present',
-    summary: 'Minecraft mod for real-time match and item tracking.',
+    summary: 'Java/Fabric mod with 2,000+ downloads across Modrinth and CurseForge, with event-driven match and item tracking.',
     stack: ['Java', 'Fabric API', 'Gradle'],
     contribution: ['Built the client-side mod in Java with the Fabric API.', 'Parsed public events, maintained match state, and rendered item-tracking indicators.', 'Published the mod on GitHub, Modrinth, and CurseForge.'],
     links: [['Code on GitHub', 'https://github.com/0utsights/LegendWatch'], ['Modrinth', 'https://modrinth.com/mod/legendwatch'], ['CurseForge', 'https://www.curseforge.com/minecraft/mc-mods/legendwatch']],
   },
 ];
+
+projects.sort((a, b) => ['deepwoken-trade', 'legendwatch', 'aeyori'].indexOf(a.slug) - ['deepwoken-trade', 'legendwatch', 'aeyori'].indexOf(b.slug));
 
 export const contributions = [
   {name:'Microsoft PowerToys', repo:'microsoft/PowerToys', number:'49402', detail:'Fixed Quick Accent sizing and character clipping at fractional display scaling.', tech:'C# / WinUI'},

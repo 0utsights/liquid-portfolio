@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "John Surles's static portfolio — Liquid Architecture.",
+  "description": "John Surles's software engineering portfolio: experience, projects, open source, research, and resume.",
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/serve.mjs",
