@@ -11,7 +11,7 @@ async function files(dir) {
 }
 test('Every generated internal link, anchor, and asset has a destination', async()=>{
  const all=await files(dist);const htmlFiles=all.filter(p=>p.endsWith('.html'));
- assert.equal(htmlFiles.length,9);
+ assert.equal(htmlFiles.length,10);
  for(const file of htmlFiles){
   const html=await readFile(file,'utf8');
   const paths=[...html.matchAll(/(?:href|src)="([^"]+)"/g)].map(m=>m[1]);
@@ -42,7 +42,7 @@ test('Pages carry usable content, unique titles, canonical URLs, and a single ma
   assert.ok(!/lorem ipsum|TODO|placeholder/i.test(html));
   assert.equal([...html.matchAll(/aria-current="page"/g)].length,1);
  }
- assert.equal(titles.size,7);
+ assert.equal(titles.size,8);
 });
 test('Research plans remain explicit, and every external contribution links to a merged PR',async()=>{
  const research=await readFile(join(dist,'research/index.html'),'utf8');

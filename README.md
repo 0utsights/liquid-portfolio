@@ -2,7 +2,7 @@
 
 A lightweight, fully static portfolio for [johnsurles.com](https://johnsurles.com).
 
-Seven pre-rendered pages cover an overview, work, research, about, and three project case studies. The overview features selected public repositories and direct contact links. Every page works with zero client JavaScript, and the downloadable résumé reflects current Virginia Tech attendance.
+Eight pre-rendered pages cover an overview, work, research, about, three featured project case studies, and the retained Aeyori page for existing links. The overview features Deepwoken.trade, OpsDeck, and LegendWatch. Every page works with zero client JavaScript, and the downloadable résumé reflects current Virginia Tech attendance.
 
 The overview owns the project index. Work expands the internship and open-source contributions; About contains education and skills. Project titles open the case studies, whose return links lead back to the overview's project section.
 
@@ -36,9 +36,12 @@ DNS uses the existing GitHub Pages apex A records and `www` CNAME pointing to `0
 - Navigation, browser history, and PDF opening use native browser behavior.
 - Keyboard navigation, a skip link, visible focus, print styles, and reduced-motion support are included.
 - Header identity and contact links are always visible; the header wraps on small screens.
+- Engineering notes use native HTML disclosures. System diagrams are semantic HTML; the marketplace screenshot is local and lazy-loaded. The blue-ink visual system uses the existing local font and no additional assets.
 - No canvas, animation runtime, audio, client routing, trackers, cookies, or third-party runtime scripts.
 - `/personal/` redirects to `/about/`. A custom 404 provides recovery links.
 
 The local EB Garamond font is distributed under the SIL Open Font License; see `public/fonts/OFL.txt`.
 
 The project screenshot in `public/images/deepwoken-market.png` was captured from the public [Deepwoken.trade item market](https://deepwoken.trade/items) on September 7, 2026. It is served locally, with a dated caption and a full-size link on the project page.
+
+Engineering notes are grounded in the project READMEs and the PowerToys PR #49402 description. Usage and download lower bounds match the September 9 resume; they are not live counters. Aeyori remains at its original URL but is not featured in the recruiter overview.
