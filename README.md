@@ -2,7 +2,7 @@
 
 A lightweight, fully static portfolio for [johnsurles.com](https://johnsurles.com).
 
-Eight pre-rendered pages cover an overview, work, research, about, three featured project case studies, and the retained Aeyori page for existing links. The overview features Deepwoken.trade, OpsDeck, and LegendWatch. Every page works with zero client JavaScript, and the downloadable résumé reflects current Virginia Tech attendance.
+Eight pre-rendered pages cover an overview, work, research, about, three featured project case studies, and a supporting OpsDeck page. The overview features Deepwoken.trade, Aeyori / KarutaBot, and LegendWatch, with OpsDeck in the supporting GitHub section. Every page works with zero client JavaScript, and the downloadable résumé reflects current Virginia Tech attendance.
 
 The overview owns the project index. Work expands the internship and open-source contributions; About contains education and skills. Project titles open the case studies, whose return links lead back to the overview's project section.
 
@@ -44,4 +44,4 @@ The local EB Garamond font is distributed under the SIL Open Font License; see `
 
 The project screenshot in `public/images/deepwoken-market.png` was captured from the public [Deepwoken.trade item market](https://deepwoken.trade/items) on September 7, 2026. It is served locally, with a dated caption and a full-size link on the project page.
 
-Engineering notes are grounded in the project READMEs and the PowerToys PR #49402 description. Usage and download lower bounds match the September 9 resume; they are not live counters. Aeyori remains at its original URL but is not featured in the recruiter overview.
+Engineering notes are grounded in the project READMEs and the PowerToys PR #49402 description. Usage and download lower bounds match the September 9 resume; they are not live counters. All project pages retain their original URLs.
