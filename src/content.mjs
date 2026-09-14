@@ -69,7 +69,7 @@ export const engineeringNotes = {
 };
 
 export const contributions = [
-  {name:'Microsoft PowerToys', repo:'microsoft/PowerToys', number:'49402', detail:'Fixed Quick Accent sizing and character clipping at fractional display scaling.', tech:'C# / WinUI', breakdown:[['Problem', 'Characters clipped or shifted at fractional display scales. The width calculation missed surface margins, borders, and layout rounding.'], ['Fix', 'Used live layout dimensions and a 1-DIP rounding allowance.'], ['Validation', 'Checked runtime behavior at 150% and 175% display scaling.']]},
+  {name:'Microsoft PowerToys', repo:'microsoft/PowerToys', number:'49402', detail:'Fixed Quick Accent sizing and character clipping at fractional display scaling.', tech:'C# / WinUI'},
   {name:'NASA-AMMOS / MMGIS', repo:'NASA-AMMOS/MMGIS', number:'1029', detail:'Preserved development startup logs by removing a terminal clear; added regression tests.', tech:'Developer tooling'},
   {name:'GitType', repo:'unhappychoice/gittype', number:'478', detail:'Fixed redraws after terminal resizing; added regression tests.', tech:'Rust / TUI'},
   {name:'T3 Code', repo:'pingdotgg/t3code', number:'4133', detail:'Fixed HTML/XML-like user message rendering while retaining assistant sanitization; added tests.', tech:'Message rendering'},
