@@ -1,29 +1,29 @@
 export const projects = [
   {
-    slug: 'deepwoken-trade', number: '01', title: 'Deepwoken.trade', category: 'Full-stack application', date: 'June 2026 — Present',
-    summary: 'Trading marketplace serving 1,000+ users, with verified accounts, trade requests, and reputation.',
+    slug: 'deepwoken-trade', number: '01', title: 'Deepwoken.trade', category: 'Backend & production infrastructure', date: 'June 2026 — Present',
+    summary: 'Built and deployed a trading marketplace serving 1,000+ users, connecting account verification, trade requests, and reputation with PostgreSQL persistence.',
     stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Docker'],
     contribution: ['Built trade listings, item markets, reputation profiles, and trade requests.', 'Added Discord OAuth, Roblox verification, and PostgreSQL persistence through Prisma.', 'Deployed with Docker, AWS, Terraform, and GitHub Actions; later migrated to Oracle Cloud and Supabase PostgreSQL.'],
     links: [['Live site', 'https://deepwoken.trade']],
     sourceNote: 'Source code is private.',
   },
   {
-    slug: 'aeyori', number: '02', title: 'Aeyori / KarutaBot', category: 'OCR & automation', date: 'March 2026 — Present',
+    slug: 'aeyori', number: '04', title: 'Aeyori / KarutaBot', category: 'OCR & automation', date: 'March 2026 — Present', archived: true,
     summary: 'Open-source OCR and scheduling client for the Karuta card game.',
     stack: ['Python', 'FastAPI', 'EasyOCR', 'Selenium', 'PostgreSQL'],
     contribution: ['Built the OCR pipeline with Python, EasyOCR, and Selenium.', 'Built a FastAPI backend and dashboard with authentication and license-key management for an earlier hosted version.', 'Worked with contributors to improve recognition reliability and processing options.'],
     links: [['Code on GitHub', 'https://github.com/0utsights/KarutaBot']],
   },
   {
-    slug: 'opsdeck', number: '04', title: 'OpsDeck', category: 'Systems & developer tooling', date: 'August 2026 — Present', archived: true,
-    summary: 'A Go terminal dashboard for Linux servers, container health, and agent heartbeats. One binary provides the interface and remote metrics probe.',
+    slug: 'opsdeck', number: '02', title: 'OpsDeck', category: 'Systems & developer tooling', date: 'August 2026 — Present',
+    summary: 'Built a Go dashboard and SSH metrics probe for Linux servers, with Docker health checks, live container placement, and explicit handling of stale agent heartbeats.',
     stack: ['Go', 'Linux', 'SSH', 'Docker'],
     contribution: ['Built local and SSH-based probes for CPU, memory, disk, network, and container health.', 'Derived site placement and migration states from live Docker observations rather than maintaining a second placement database.', 'Used file-based agent heartbeats with explicit stale-state handling; kept the dashboard independent of any particular AI framework.'],
     links: [['Code on GitHub', 'https://github.com/0utsights/opsdeck']],
   },
   {
-    slug: 'legendwatch', number: '03', title: 'LegendWatch', category: 'Real-time systems · Game mod', date: 'March 2026 — Present',
-    summary: 'Java/Fabric mod with 2,000+ downloads across Modrinth and CurseForge, with event-driven match and item tracking.',
+    slug: 'legendwatch', number: '03', title: 'LegendWatch', category: 'Event-driven software · Java', date: 'March 2026 — Present',
+    summary: 'Built a Java/Fabric mod that turns public game events into match and item state, with 2,000+ downloads across Modrinth and CurseForge.',
     stack: ['Java', 'Fabric API', 'Gradle'],
     contribution: ['Built the client-side mod in Java with the Fabric API.', 'Parsed public events, maintained match state, and rendered item-tracking indicators.', 'Published the mod on GitHub, Modrinth, and CurseForge.'],
     links: [['Code on GitHub', 'https://github.com/0utsights/LegendWatch'], ['Modrinth', 'https://modrinth.com/mod/legendwatch'], ['CurseForge', 'https://www.curseforge.com/minecraft/mc-mods/legendwatch']],
@@ -35,7 +35,7 @@ export const featuredProjects = projects.filter(p => !p.archived);
 
 export const engineeringNotes = {
   'deepwoken-trade': {
-    label: '01 / Production application', outcome: '1,000+ users',
+    label: '01 / Backend & persistence', outcome: '1,000+ users',
     problem: 'A trade listing needs context: who posted it, how their account was verified, and how other players rate them.',
     decision: 'Connected Discord OAuth and Roblox verification to trade requests and reputation profiles, backed by PostgreSQL through Prisma.',
     detail: 'The application was deployed with Docker, Terraform, and GitHub Actions on AWS, then migrated to Oracle Cloud and Supabase PostgreSQL.',
@@ -43,7 +43,7 @@ export const engineeringNotes = {
     flow: [['Identity', 'Discord + Roblox'], ['Application', 'Next.js + Prisma'], ['Persistence', 'PostgreSQL']],
   },
   aeyori: {
-    label: '02 / OCR & automation', outcome: 'Open-source Python client',
+    label: '04 / OCR & automation', outcome: 'Open-source Python client',
     problem: 'Card-image recognition and scheduled routines need to work together while giving the user clear configuration, activity feedback, and stop controls.',
     decision: 'Built a local EasyOCR pipeline and workflow coordinator with cooldown handling, configurable routines, independent profiles, and activity logs.',
     detail: 'Packaged the client for Windows with PyInstaller. A bundle-check command validates OCR and Selenium dependencies, including Selenium Manager, without opening the interface or logging in.',
@@ -51,7 +51,7 @@ export const engineeringNotes = {
     flow: [['Recognize', 'EasyOCR image pipeline'], ['Coordinate', 'Routines + cooldowns'], ['Operate', 'Profiles + activity logs']],
   },
   opsdeck: {
-    label: '04 / Systems tooling', outcome: 'One native Go binary',
+    label: '02 / Linux & observability', outcome: 'One native Go binary',
     problem: 'Server health, container placement, and agent progress are spread across different machines and processes.',
     decision: 'Combined a terminal interface and on-demand metrics probe in one Go binary. Remote collection uses SSH; the system needs no web server or metrics database.',
     detail: 'Migration states come from live container placement. Agent heartbeats use a small JSON contract and become stale after 90 seconds, so old progress is visibly distinguishable from current activity.',

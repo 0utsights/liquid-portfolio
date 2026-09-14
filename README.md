@@ -2,7 +2,7 @@
 
 A lightweight, fully static portfolio for [johnsurles.com](https://johnsurles.com).
 
-Eight pre-rendered pages cover an overview, work, research, about, three featured project case studies, and a supporting OpsDeck page. The overview features Deepwoken.trade, Aeyori / KarutaBot, and LegendWatch, with OpsDeck in the supporting GitHub section. Every page works with zero client JavaScript, and the downloadable résumé reflects current Virginia Tech attendance.
+Eight pre-rendered pages cover an overview, work, research, about, three featured project case studies, and a supporting Aeyori page. The overview emphasizes backend engineering and features Deepwoken.trade, OpsDeck, and LegendWatch, with Aeyori in the supporting GitHub section. Every page works with zero client JavaScript, and the downloadable résumé reflects current Virginia Tech attendance.
 
 The overview owns the project index. Work expands the internship and open-source contributions; About contains education and skills. Project titles open the case studies, whose return links lead back to the overview's project section.
 
@@ -36,7 +36,7 @@ DNS uses the existing GitHub Pages apex A records and `www` CNAME pointing to `0
 - Navigation, browser history, and PDF opening use native browser behavior.
 - Keyboard navigation, a skip link, visible focus, print styles, and reduced-motion support are included.
 - Header identity and contact links are always visible; the header wraps on small screens.
-- Engineering notes use native HTML disclosures. System diagrams are semantic HTML; the marketplace screenshot is local and lazy-loaded. The blue-ink visual system uses the existing local font and no additional assets.
+- Engineering notes use native HTML disclosures, open by default on project pages. System diagrams are semantic HTML; the marketplace screenshot is local and lazy-loaded. The blue-ink visual system uses the existing local font and no additional assets.
 - No canvas, animation runtime, audio, client routing, trackers, cookies, or third-party runtime scripts.
 - `/personal/` redirects to `/about/`. A custom 404 provides recovery links.
 
