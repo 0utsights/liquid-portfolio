@@ -1,154 +1,589 @@
 %PDF-1.4
-%“Œ‹ ReportLab Generated PDF document (opensource)
+%âãÏÓ
 1 0 obj
 <<
-/F1 2 0 R /F2 3 0 R
+/Producer (ReportLab PDF Library \055 \050opensource\051)
+/Author (John Surles)
+/CreationDate (D\07220260909174130\05504\04700\047)
+/Creator (\050unspecified\051)
+/Keywords ()
+/ModDate (D\07220260909174130\05504\04700\047)
+/Subject (\050unspecified\051)
+/Title (John Surles \055 Software Engineering Resume)
+/Trapped (\057False)
 >>
 endobj
 2 0 obj
 <<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
 >>
 endobj
 3 0 obj
 <<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+/Type /Catalog
+/Pages 2 0 R
 >>
 endobj
 4 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (mailto:surlesjohn@outlook.com)
->> /Border [ 0 0 0 ] /Rect [ 44 716.32 141.5707 727 ] /Subtype /Link /Type /Annot
+/Annots [ 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 15 0 R 16 0 R 17 0 R 18 0 R ]
+/Contents 11 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font 12 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Parent 2 0 R
 >>
 endobj
 5 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/0utsights)
->> /Border [ 0 0 0 ] /Rect [ 216.9448 716.32 298.5667 727 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057github\056com\057microsoft\057PowerToys\057pull\05749402)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 158.5925 390.65 240.967 402.05 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 6 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://www.linkedin.com/in/john-surles-650a16389/)
->> /Border [ 0 0 0 ] /Rect [ 305.8291 716.32 339.4711 727 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057github\056com\057NASA\055AMMOS\057MMGIS\057pull\0571029)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 73.596 364.65 150.6885 376.05 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 7 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://johnsurles.com)
->> /Border [ 0 0 0 ] /Rect [ 44 703.9875 103.8436 714.9875 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057github\056com\057unhappychoice\057gittype\057pull\057478)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 399.7325 350.65 471.543 362.05 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 8 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/microsoft/PowerToys/pull/49402)
->> /Border [ 0 0 0 ] /Rect [ 158.5925 390.65 240.967 402.05 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057deepwoken\056trade)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 44 312.76 124.316 324.4 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 9 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/NASA-AMMOS/MMGIS/pull/1029)
->> /Border [ 0 0 0 ] /Rect [ 73.596 364.65 150.6885 376.05 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057github\056com\0570utsights\057KarutaBot)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 44 246.76 129.1563 258.4 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 10 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/unhappychoice/gittype/pull/478)
->> /Border [ 0 0 0 ] /Rect [ 399.7325 350.65 471.543 362.05 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057github\056com\0570utsights\057LegendWatch)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 44 206.76 107.5932 218.4 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 11 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (https://deepwoken.trade)
->> /Border [ 0 0 0 ] /Rect [ 44 312.76 124.316 324.4 ] /Subtype /Link /Type /Annot
+/Length 6879
 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 44 730 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F2 24 Tf 27 TL (John Surles) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 716 cm
+q
+BT 1 0 0 1 0 2.1 Tm 11 TL /F1 8.803320 Tf 0 0 0 rg (surlesjohn@outlook.com | \(727\) 331-0916 | github.com/0utsights | johnsurles.com | https://www.linkedin.com/in/john-surles-650a16389) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 703 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F1 8.9 Tf 11 TL () Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 684 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 1.7 Tm /F2 10.3 Tf 12 TL (EDUCATION) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 681.35 cm
+q
+.65 w
+1 J
+.2 .2 .2 RG
+n 0 0 m 524 0 l S
+Q
+Q
+q
+1 0 0 1 44 665.35 cm
+q
+BT 1 0 0 1 0 2.3 Tm 12 TL /F2 9.7 Tf 0 0 0 rg (Virginia Tech | B.S. in Computer Science ) Tj /F1 9.2 Tf (| Aug. 2026 - Present) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 652.35 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F1 8.9 Tf 11 TL (Expected graduation: May 2028) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 638.35 cm
+q
+BT 1 0 0 1 0 2.3 Tm 12 TL /F2 9.7 Tf 0 0 0 rg (Northern Virginia Community College | Computer Science ) Tj /F1 9.2 Tf (| Sep. 2024 - May 2026) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 625.35 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F1 8.9 Tf 11 TL (GPA: 3.55/4.0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 606.35 cm
+q
+BT 1 0 0 1 0 1.7 Tm 12 TL /F2 10.3 Tf 0 0 0 rg (EXPERIENCE & RESEARCH) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 603.7 cm
+q
+.65 w
+1 J
+.2 .2 .2 RG
+n 0 0 m 524 0 l S
+Q
+Q
+q
+1 0 0 1 44 587.7 cm
+q
+BT 1 0 0 1 0 2.3 Tm 12 TL /F2 9.7 Tf 0 0 0 rg (Procentrix | Software Engineering Intern ) Tj /F1 9.2 Tf (| Jun. - Aug. 2026) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 561.7 cm
+q
+BT 1 0 0 1 9 14.5 Tm -7 0 Td 12 TL /F1 9.5 Tf 0 0 0 rg (- Built a reusable backend template using ) Tj /F2 9.5 Tf (Node.js, TypeScript, and SQL Server) Tj /F1 9.5 Tf (, with separate data access and service) Tj T* 7 0 Td (layers for enterprise applications.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 547.7 cm
+q
+0 0 0 rg
+BT 1 0 0 1 9 2.5 Tm /F1 9.5 Tf 12 TL -7 0 Td (- Implemented REST APIs with authentication, authorization, input validation, and database access safeguards.) Tj T* 7 0 Td ET
+Q
+Q
+q
+1 0 0 1 44 521.7 cm
+q
+BT 1 0 0 1 9 14.5 Tm -7 0 Td 12 TL /F1 9.5 Tf 0 0 0 rg (- Built a financial risk assessment interface with ) Tj /F2 9.5 Tf (React, Microsoft Dataverse, and Fluent UI) Tj /F1 9.5 Tf (, with reusable master-detail) Tj T* 7 0 Td (components for viewing related financial and firm records.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 495.7 cm
+q
+0 0 0 rg
+BT 1 0 0 1 9 14.5 Tm /F1 9.5 Tf 12 TL -7 0 Td -0.128679 Tw (- Published a Claude Code plugin marketplace to share React/TypeScript scaffolding and Dataverse authentication guidance) Tj T* 0 Tw 7 0 Td (across the engineering team.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 490.7 cm
+Q
+q
+1 0 0 1 44 478.7 cm
+q
+BT 1 0 0 1 0 2.3 Tm 12 TL /F2 9.7 Tf 0 0 0 rg (Virginia Tech | Undergraduate Researcher & Group Lead ) Tj /F1 9.2 Tf (| Sep. 2026 - Present) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 465.7 cm
+q
+BT 1 0 0 1 0 2.1 Tm 11 TL /F1 8.9 Tf 0 0 0 rg (VTURCS Undergraduate Research Lab | Semantic Search & Matching) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 439.7 cm
+q
+0 0 0 rg
+BT 1 0 0 1 9 14.5 Tm /F1 9.5 Tf 12 TL -7 0 Td (- Leading one of three student groups under faculty supervision and developing a semantic search and matching system for) Tj T* 7 0 Td (student research opportunities.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 420.7 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 1.7 Tm /F2 10.3 Tf 12 TL (SELECTED OPEN-SOURCE CONTRIBUTIONS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 418.05 cm
+q
+.65 w
+1 J
+.2 .2 .2 RG
+n 0 0 m 524 0 l S
+Q
+Q
+q
+1 0 0 1 44 390.05 cm
+q
+BT 1 0 0 1 9 14.5 Tm -7 0 Td 12 TL /F1 9.5 Tf 0 0 0 rg (- ) Tj /F2 9.5 Tf (Microsoft PowerToys:) Tj /F1 9.5 Tf ( Fixed character clipping and horizontal shifts in Quick Accent by correcting window sizing at) Tj T* 7 0 Td (fractional display scales. ) Tj (Merged PR #49402) Tj (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 364.05 cm
+q
+BT 1 0 0 1 9 14.5 Tm -7 0 Td 12 TL /F1 9.5 Tf 0 0 0 rg (- ) Tj /F2 9.5 Tf (NASA-AMMOS/MMGIS:) Tj /F1 9.5 Tf ( Preserved startup logs for debugging by removing a terminal-clearing step; added a regression) Tj T* 7 0 Td (test. ) Tj (Merged PR #1029) Tj (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 350.05 cm
+q
+BT 1 0 0 1 9 2.5 Tm -7 0 Td 12 TL /F1 9.5 Tf 0 0 0 rg (- ) Tj /F2 9.5 Tf (GitType:) Tj /F1 9.5 Tf ( Fixed screen redraws after terminal resizing and added regression tests. ) Tj (Merged PR #478) Tj (.) Tj T* 7 0 Td ET
+Q
+Q
+q
+1 0 0 1 44 331.05 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 1.7 Tm /F2 10.3 Tf 12 TL (PROJECTS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 328.4 cm
+q
+.65 w
+1 J
+.2 .2 .2 RG
+n 0 0 m 524 0 l S
+Q
+Q
+q
+1 0 0 1 44 312.4 cm
+q
+BT 1 0 0 1 0 2.3 Tm 12 TL /F2 9.7 Tf 0 0 0 rg (Deepwoken.trade) Tj ( ) Tj /F1 9.2 Tf (| Jun. 2026 - Present) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 286.4 cm
+q
+BT 1 0 0 1 9 14.5 Tm -7 0 Td 12 TL /F1 9.5 Tf 0 0 0 rg (- Built a trading marketplace supporting ) Tj /F2 9.5 Tf (1,000+ users) Tj /F1 9.5 Tf (, with reputation profiles, Discord OAuth, Roblox verification, and) Tj T* 7 0 Td /F2 9.5 Tf (PostgreSQL) Tj /F1 9.5 Tf ( storage through Prisma.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 260.4 cm
+q
+BT 1 0 0 1 9 14.5 Tm -7 0 Td 12 TL /F1 9.5 Tf 0 0 0 rg (- Deployed the ) Tj /F2 9.5 Tf (Next.js) Tj /F1 9.5 Tf ( application using Docker, AWS, Terraform, and GitHub Actions; later migrated hosting to Oracle) Tj T* 7 0 Td (Cloud and the database to Supabase PostgreSQL.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 246.4 cm
+q
+BT 1 0 0 1 0 2.3 Tm 12 TL /F2 9.7 Tf 0 0 0 rg (Aeyori / KarutaBot) Tj ( ) Tj /F1 9.2 Tf (| Mar. 2026 - Present) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 220.4 cm
+q
+BT 1 0 0 1 9 14.5 Tm -7 0 Td 12 TL /F1 9.5 Tf 0 0 0 rg (- Developed an open-source OCR automation tool with ) Tj /F2 9.5 Tf (Python, FastAPI, EasyOCR, Selenium, and PostgreSQL) Tj /F1 9.5 Tf (; built a) Tj T* 7 0 Td (hosted dashboard with authentication and license management.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 206.4 cm
+q
+BT 1 0 0 1 0 2.3 Tm 12 TL /F2 9.7 Tf 0 0 0 rg (LegendWatch) Tj ( ) Tj /F1 9.2 Tf (| Mar. 2026 - Present) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 180.4 cm
+q
+BT 1 0 0 1 9 14.5 Tm -7 0 Td 12 TL /F1 9.5 Tf 0 0 0 rg (- Built a ) Tj /F2 9.5 Tf (Java/Fabric) Tj /F1 9.5 Tf ( Minecraft mod with ) Tj /F2 9.5 Tf (2,000+ downloads) Tj /F1 9.5 Tf ( across Modrinth and CurseForge; implemented event parsing,) Tj T* 7 0 Td (match state tracking, and visual item indicators.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 161.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 1.7 Tm /F2 10.3 Tf 12 TL (TECHNICAL SKILLS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 158.75 cm
+q
+.65 w
+1 J
+.2 .2 .2 RG
+n 0 0 m 524 0 l S
+Q
+Q
+q
+1 0 0 1 44 143.75 cm
+q
+BT 1 0 0 1 0 2.1 Tm 11 TL /F2 8.9 Tf 0 0 0 rg (Languages:) Tj /F1 8.9 Tf ( Python, C++, TypeScript, Java, SQL) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 130.75 cm
+q
+BT 1 0 0 1 0 2.1 Tm 11 TL /F2 8.9 Tf 0 0 0 rg (Frameworks & Data:) Tj /F1 8.9 Tf ( React, Next.js, Node.js, FastAPI, PostgreSQL, SQL Server, Prisma, Dataverse) Tj T* ET
+Q
+Q
+q
+1 0 0 1 44 117.75 cm
+q
+BT 1 0 0 1 0 2.1 Tm 11 TL /F2 8.9 Tf 0 0 0 rg (Tools & Infrastructure:) Tj /F1 8.9 Tf ( Docker, Terraform, GitHub Actions, Git, Linux, AWS, Oracle Cloud) Tj T* ET
+Q
+Q
+ 
+
+endstream
 endobj
 12 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (https://github.com/0utsights/KarutaBot)
->> /Border [ 0 0 0 ] /Rect [ 44 246.76 129.1563 258.4 ] /Subtype /Link /Type /Annot
+/F1 13 0 R
+/F2 14 0 R
 >>
 endobj
 13 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (https://github.com/0utsights/LegendWatch)
->> /Border [ 0 0 0 ] /Rect [ 44 206.76 107.5932 218.4 ] /Subtype /Link /Type /Annot
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 14 0 obj
 <<
-/Annots [ 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R ] /Contents 18 0 R /MediaBox [ 0 0 612 792 ] /Parent 17 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 
-  /Trans <<
-
->> /Type /Page
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 15 0 obj
 <<
-/PageMode /UseNone /Pages 17 0 R /Type /Catalog
+/Type /Annot
+/Subtype /Link
+/Rect [ 44 716.3 140.510794 726.90332 ]
+/Border [ 0 0 0 ]
+/A <<
+/S /URI
+/Type /Action
+/URI (mailto\072surlesjohn\100outlook\056com)
+>>
+/P 4 0 R
 >>
 endobj
 16 0 obj
 <<
-/Author (John Surles) /CreationDate (D:20260909174130-04'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260909174130-04'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (\(unspecified\)) /Title (John Surles - Software Engineering Resume) /Trapped /False
+/Type /Annot
+/Subtype /Link
+/Rect [ 215.066109 716.3 295.801354 726.90332 ]
+/Border [ 0 0 0 ]
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057github\056com\0570utsights)
+>>
+/P 4 0 R
 >>
 endobj
 17 0 obj
 <<
-/Count 1 /Kids [ 14 0 R ] /Type /Pages
+/Type /Annot
+/Subtype /Link
+/Rect [ 302.984863 716.3 362.178385 726.90332 ]
+/Border [ 0 0 0 ]
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057johnsurles\056com)
+>>
+/P 4 0 R
 >>
 endobj
 18 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 2649
+/Type /Annot
+/Subtype /Link
+/Rect [ 369.361894 716.3 568 726.90332 ]
+/Border [ 0 0 0 ]
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057www\056linkedin\056com\057in\057john\055surles\055650a16389)
 >>
-stream
-Gau0D>BAfF%Xua-:t;Q!b+8XS2YWW+_[qtS$OHoGG9?OTYoDn`mIk_46eIhL^QNFdiSqsj:*l/,a&Yj*5"VC5J;lcgqUZ)U5#:+raoTP:aUF]><J=!d\s'J8c^apYC)%X%\f%^)kqt=__oJ:,V$]m_[,Q[A,qEkcCn0D(70MX="^M'7PA`/N0A6;]5L41.p!!+cPHO#/;9'hYjC$GOOmTOYE3<-_hsca-ai"<[5$4Bbe!&)948a6XE#X<*$C-KI[Te!rGKBbB(M8e'l.ue00j;d;7W4m@54h;9_#7S=kdFbGJgC)?a7CjHF)j6]IH0aP'C*hWd0Yi`=MsRZ<[BoG9onLEhKR\;hVE%RFiUN3Z3.1S%@6e8Rkr6Am!!Q"(8WsF:rBBg&A\'sOa:kSA2!kF':D5K@Z.nT:#GD+bs`lp9XqPsj?HjY$Ub+<)9.Nl$HA[qOiOem&<8=mjllMaBI@j/>hcAJ)2=#a*gslAC[T3c=(\N1'Q_T>+6JIV#r=n;+(;rcFF(:_bY%K/aP9C!(0j;4JI!t:P=V&UIL6-?kD7__E#S=-`Mn_Sj\FD8ST\de"mUEdrWj7><kG;6G2X<^rAZJkT=;V;=hR8$qrb1Fl?.#,?2+Rmh/Tnel?k$EXFaL1a73?>Z*s2F6k5LSOIAd(@D9a%AsQ,1kXLq=cBX4Jd#/;YqFKmhP/tMAD4"WDAZbA?nZYI<]LFN>)gGfNDd9,[C<p0;_rjDj"rJb[BJp;Z9UYXj,9I=)j+&!WM'eR1?er+!UoVhDDn6(8<QrLT'!Wkd_["4hqoD%qaOO%5feXpV@M]6nA#@>ScO9p<H!K\-;2pVCO0=2]rBChFMCT,lWIPY&YnEK-MrR'IBl.Uc&?"e?PK2>3_N`X&m*7c=+Bnr(0_Gtc*n'::0lR3]@8CO`YQW--1:\p3oXe)^TDYaGY[6:N"i=X(J<<aj;asVpd;(Z#o7SQB)bPSSd>6SMR/*/+=QBc(!5eR49P\a+6:KK<ll!\fP6Q=uJIuN9-@I"!,rP65/hnj"]B37X=$]/bmX(jfYT[;n1`fZj\R?]7:I!.J=@QsQUVNY_94F^V6r/<QIl_Wt</CSFj=Z\;0W_]t`N30oH'/qSgN)(]]n--$8Uq;7Bd!$L?,G/5Yf,_WXmo1,,Zsm[UO(i&CC9Sg'(gde642\j[Y-nmCc7K.:D$Je)bB^J#4hs('lAlJ-83r31!5:VHiP[/gNO'=i=A2Y1JmeK2k"Z$LAUTA54Z8,V^dD(3E$uZ4m_Oe8gZ:b3V//`g'`[c[9brRnW*h8n!!WGB7.Qnkd)^\FWN;1"b'"Grdo4BGRMI"d&0M%SWlL-&O)FPX9anD9X3RsZpD-/WQb`9%12h?=Lh"Ri^"qHoi4_f8UCttjFN7gL1/9M,K\u@)o=]QcmpZjOK*35-J&L&2(gYE;882r&c;lfkLr?Q'IhgW\)6RH\sI@pm,"&KGF5<]FRF#oUYb0\;SM2.K:SlN^K:84YX7\D*V7G1HdGBo4`i*=>YX9OIluq`E$_*[]6MsgY\RX$]g0O+\l5Cl7n*\%TjENmG"ZX4?PDB]5hdML!n.ll?c;)?kS\32^0H7*s.gFSIYqc[#]^.:q*JTK>#B@8"X[TC#$;u2c>WpdWOAh8Rp@ViIAL9KJ"V#?*k0>[_;K3Y0c40i`^c[p>6]rt'H)WK;.Bmm4<#\4T-j.iJUd_L*m2O)1_AUWB1l(p!p"T0%u/,sJGFZJit\2];(AVpkR?)*#YL-E[U'#5m0(D`pL&(p%#p[=XO8.JOpH^2'jICPRh<Kf&5\q\4@,iU!,TOXMYAMN)U5s?$UbGAm$k4dgDG[?],U)FL#lZ]Ro]3qeaL"`)m>caQ^l)hM9=O-3)b)$k2FeonFASp!p#/-Dj5k7)C9Z1Wo3NBc@0j?E([QUJ%uKo"j1P=L\`rn/?t?oJISCXQU6m&K=a%!RM(S?1ltL`3_.E&3]cj+=L3AH:hkX\_e%kid+V%0E*L?8.$OH.@2(b5Kf/&EmJ"MCal>XhOSbic%\"/^1:T"Y]">;ijNH,N`#VO:T`)nJpFEB\_`efIU)N@m9/=JPSh<4!J4-Vn:s;q>L)5Y=.eP(B@07#MQDmV%'0ilm?>fHJ]RQHig#jrq`L'Yd;=>gMd,lhu<cA)S0nn]`/C!F*(bkW_H>n@+,#a1`>s:Sd_kXN'M8E`3l\nAib:q,*OYSo$)\#lY"X8l.E3mAdYln@0=87"H-"F_8OlYaXi:/1^Ap(YV6HV$\*E"Pf&pM?*HY@.6BuM;klW&W25W`7k6LD6/[*Rnto)BigpsV"_1k.h=f:D:O5<%qk?!OY6'&I%c%WGqKYilLKdQ`k%2sYl?TqXe-s&`Q>9@uN+-lu&/XZHilE`Wl$j<kL#mhCk&.*uG#W;]He#u:^b#oDAbYXa$NFAlobAUT0j=cc<I4\*V\W`Xa4FiSgg)s0`$oB!F4C%l'6>Hcp;*4JZP=2t!7D5URj(b&YKgqu"Pc_>]:XP_FQq)p,1oA]+aq!e4['sXJ9lXDsk=iGij;cej1Hn!Tu`g)Zeq]jDJDcQ@JJKNGrg,?'DgG;G`Dqdn[S1AI6)&,R!1u9.i"PXt$d#2j5cpf=Q8JFB%b'K*8N3ML*/,`e+^5.rMI,&:3$dpc;k<GL8$gU.]=9~>endstream
+/P 4 0 R
+>>
 endobj
 xref
 0 19
 0000000000 65535 f 
-0000000061 00000 n 
-0000000102 00000 n 
-0000000209 00000 n 
-0000000321 00000 n 
-0000000489 00000 n 
-0000000662 00000 n 
-0000000857 00000 n 
-0000001025 00000 n 
-0000001221 00000 n 
-0000001412 00000 n 
-0000001609 00000 n 
-0000001773 00000 n 
-0000001953 00000 n 
-0000002135 00000 n 
-0000002407 00000 n 
-0000002477 00000 n 
-0000002784 00000 n 
-0000002845 00000 n 
+0000000015 00000 n 
+0000000365 00000 n 
+0000000424 00000 n 
+0000000473 00000 n 
+0000000741 00000 n 
+0000000961 00000 n 
+0000001179 00000 n 
+0000001399 00000 n 
+0000001574 00000 n 
+0000001771 00000 n 
+0000001971 00000 n 
+0000008903 00000 n 
+0000008947 00000 n 
+0000009055 00000 n 
+0000009168 00000 n 
+0000009362 00000 n 
+0000009569 00000 n 
+0000009767 00000 n 
 trailer
 <<
-/ID 
-[<f743089ab839ac6429e2b567c2bd4ab3><f743089ab839ac6429e2b567c2bd4ab3>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 16 0 R
-/Root 15 0 R
 /Size 19
+/Root 3 0 R
+/Info 1 0 R
 >>
 startxref
-5586
+10000
+%%EOF
+3 1 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+ /AF [20 0 R] /Names << /EmbeddedFiles << /Names [(Content Credentials) 20 0 R] >> >> >>
+endobj
+19 0 obj
+<< /Length 24288 /F << /Subtype (application/c2pa) /Length 24288 >> >>
+stream
+  ^àjumb   jumdc2pa  €  ª 8›qc2pa   ^ºjumb   Gjumdc2ma  €  ª 8›qurn:c2pa:2c4e74a4-c97c-4ea1-9d7a-1a8a3311a50b   ªjumb   )jumdc2as  €  ª 8›qc2pa.assertions   	¹jumb   #jumd@Ë2»ŠH§*ÖôCic2pa.icon    bfdb image/svg+xml   	wbidb<svg width="716" height="716" viewBox="0 0 716 716" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M508.749 317.399C516.777 287.314 508.991 253.884 485.389 230.282C461.788 206.681 428.36 198.895 398.273 206.923C376.231 184.928 343.39 174.956 311.148 183.596C278.906 192.234 255.45 217.292 247.36 247.361C217.291 255.451 192.233 278.91 183.595 311.149C174.957 343.391 184.927 376.232 206.924 398.274C198.896 428.359 206.683 461.789 230.284 485.391C253.885 508.992 287.313 516.779 317.401 508.75C339.442 530.745 372.286 540.717 404.525 532.079C436.767 523.441 460.223 498.384 468.313 468.315C498.383 460.224 523.44 436.766 532.078 404.526C540.716 372.285 530.747 339.443 508.749 317.402V317.399ZM470.899 244.776C486.892 260.77 493.488 282.601 490.687 303.412L415.577 260.046C412.411 258.218 408.509 258.218 405.345 260.046L317.401 310.82V277.526C317.401 275.191 318.652 273.005 320.676 271.837L387.644 233.174C414.178 218.353 448.346 222.223 470.901 244.776H470.899ZM357.837 311.144L398.275 334.491V381.185L357.837 404.532L317.398 381.185V334.491L357.837 311.144ZM264.776 269.693C265.207 239.305 285.644 211.649 316.453 203.393C338.3 197.54 360.505 202.744 377.127 215.573L302.014 258.937C298.848 260.764 296.898 264.144 296.898 267.798V369.346L268.065 352.699C266.043 351.531 264.776 349.353 264.776 347.017V269.691V269.693ZM203.391 316.454C209.244 294.608 224.854 277.978 244.276 269.999V356.73C244.276 360.384 246.226 363.763 249.392 365.591L337.337 416.365L308.503 433.013C306.481 434.181 303.961 434.188 301.939 433.02L234.971 394.357C208.868 378.789 195.138 347.261 203.391 316.454ZM244.775 470.9C228.781 454.906 222.186 433.075 224.986 412.264L300.096 455.63C303.263 457.457 307.164 457.457 310.328 455.63L398.273 404.856V438.149C398.273 440.485 397.022 442.671 394.997 443.839L328.029 482.502C301.495 497.322 267.327 493.452 244.772 470.9H244.775ZM450.897 445.982C450.466 476.371 430.029 504.027 399.22 512.283C377.373 518.136 355.168 512.932 338.547 500.102L413.659 456.738C416.826 454.911 418.775 451.532 418.775 447.877V346.329L447.609 362.977C449.631 364.145 450.897 366.323 450.897 368.659V445.985V445.982ZM512.282 399.221C506.429 421.068 490.819 437.697 471.397 445.676V358.946C471.397 355.292 469.448 351.912 466.281 350.085L378.336 299.311L407.17 282.663C409.192 281.495 411.712 281.487 413.734 282.655L480.702 321.318C506.805 336.887 520.536 368.415 512.282 399.221Z" fill="black"/>
+</svg>
+  jumb   )jumdcbor  €  ª 8›qc2pa.actions.v2    ëcbor¢gactions¤factionlc2pa.createdqdigitalSourceTypexFhttp://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMediamsoftwareAgent¢dnamekgpt-6-astragversionkgpt-6-astradwhenx2026-09-14T17:57:29.134381ZrallActionsIncludedô   ¤jumb   (jumdcbor  €  ª 8›qc2pa.hash.data    tcbor¥jexclusions¢estart)¹flength^àdnamenjumbf manifestcalgfsha256dhashX ÌÛW—9Ïk×n”†BÙY"€æ‰<ú9	vG½‰…zcpad@  ‰jumb   'jumdc2cl  €  ª 8›qc2pa.claim.v2   Zcbor¦jinstanceIDx,xmp:iid:b609c2e9-edad-4bae-82a4-22b2cc9d4398tclaim_generator_info£dnamegChatGPTdicon¢curlx$self#jumbf=c2pa.assertions/c2pa.icondhashX u>ğ=W1’³¨NëLûÁŒt·'wÖĞ6Çe6ãñkspecVersione2.2.0isignaturexMself#jumbf=/c2pa/urn:c2pa:2c4e74a4-c97c-4ea1-9d7a-1a8a3311a50b/c2pa.signaturercreated_assertionsƒ¢curlx$self#jumbf=c2pa.assertions/c2pa.icondhashX u>ğ=W1’³¨NëLûÁŒt·'wÖĞ6Çe6ãñ¢curlx*self#jumbf=c2pa.assertions/c2pa.actions.v2dhashX ½½âh4–îét]ï„Ö|¨7ĞGÛ­©±’ğ9¢curlx)self#jumbf=c2pa.assertions/c2pa.hash.datadhashX 1AY¼BÇB#?G.ĞuÌcä“ÃDÈª@‡>ÿwÃŸùhdc:titleiimage.pdfcalgfsha256  P8jumb   (jumdc2cs  €  ª 8›qc2pa.signature   PcborÒ„Yè¢8$!‚Yˆ0‚„0‚l ¥üépŒò€1îDds0	*†H†÷ 0J1!0USSL.com C2PA ICA R1 202510U
+SSL Corporation10	UUS0260422155105Z270423155104Z0G10	UUS10U
+OpenAI OpCo, LLC10UOpenAI Media Service0‚"0	*†H†÷ ‚ 0‚
+‚ ºjLM—ê‰¶Ñ¾^XNr¡™ßiq|å!#Ó¢5œL£J<ïn+¿æd®×„Ki$ZcÏêv
+²eÛ|<áşÁ3w¯'Ş; :´c‡˜ÍMœ¿´3DªT07F¸ıšyDsWU£c|İ¬X/æz®Ş¥˜Ã“NHğZøà|¤’KÕlºÊÂ*È’¾uÔ”gµWªjšm00,×UaŒjÒS¶ x^ECN’£€ñ¯[Ñ²ëş‹ïº×7	•«d-™É‡šø¿.Ğçc€–šy 7“6£5ÉHÉ,˜céD›5¬¹§SlœhsÈ
+9ÌIó £‚g0‚c0Uÿ0 0U#0€9=GÜ—¯ˆ{MsÍåî¤¥*0o+c0a09+0†-http://crt-c2pa.ssl.com/SSL.com-C2PA-I-R1.cer0$+0†http://ocsp-c2pa.ssl.com0U 00
++ƒè^0)U%"0 ++$
++ƒè^0UóMÔËrøF
+vG¥hOt0UÿÀ0	+ƒè^
++ƒè^
+03	+ƒè^&$019bc403-5cd7-7669-afe6-fdb17177d4280	*†H†÷ ‚ ‚8—le¡7 ñùítºÕ¦[5õglÏ+fi@ÍõüÒrVßÊ•(êøfŞBC=øx h(‰­µîüõ2ÒŒ¸_çl€në[|—[0ç.B¸Æpšşş 	¬5FÕ ŒIE€Ãº’UÇZoÒëØy›–:¼D44}ôA¥3—/.lQR
+m=I°ËÇ†XÌÜî.éÆ9¸3\ Úî W3T.p(J%)O’|.Òúİg.zèPx9Qºƒ:Úˆ~#’õbXšåÂ¨s†ÅØqéï\d{‘î7/v˜xVdçoBÑ}’¼…jomd…Øÿ"–í¹ï²Ğ\„}h]5[K±ÅiHyæh Äa˜:LøÀ$yå¦hàïıÖÖ.-AduV_“”¶¡œŠ<¶ÀèmóÅCçv,h¤òæË‹ˆ•è{*r$=!Æcm/%€£™[ª)¥ıGêá÷kåû[P&m+¡‚]1õİb¨|2ÜLÇ¥,r0P€W“‚âè®³§¯Y4®rï*®x¬â3ìSµÉ™Ò(¨*7¡N«üÌ~X›'mEá´*œ½0W¡1. .ÉâÈTÛ¡’O¾$5˜ş/iÜ¸MãŞ/èlõÁŠâÓşrwÓ¨+ÔW—®‡Ø ¾“¶‰YS0‚O0‚7 '+cÈÌM-›„Qrlôœ^2Q®Ş0	*†H†÷ 0O1&0$USSL.com C2PA RSA Root CA 202510U
+SSL Corporation10	UUS0251222181730Z301221181730Z0J1!0USSL.com C2PA ICA R1 202510U
+SSL Corporation10	UUS0‚"0	*†H†÷ ‚ 0‚
+‚ Ë:´Í¸œË)V¸y§øköùØrÃ¦˜­*AÚa.GR½tQ¾]ìz‚¶Àûúè'¥‹èşbó`ñ_HÊss•äNnÌNz5ŞXá×‚ÜÒGCw›ßHˆyŸ£9¤YN^àNG—òuB×v=¶¤"ÜíÆoÔrFŒÖQÇµ·zò“ù#'Õ€PuŠp héç¼„(|œ*ê)©À/şÉvFU°/cê}ô°D¤@Ş@6\DŠTkWHÿ»o¤ÕêÂ×|Ø¼Îi¿  M“E;™.yÒÏŸ)»FÙxc0–3Qœ^“múå4JXx³)l]|¸u•<™w!{Ø´JëÚÍÇ
+ÖÉ¢Ş®—³¶Q–Ú’›Ã²»PÄş¶¤L•]-’jObåà*÷i œÕ¹“ ÚÑ»^OÆ¯ù)LĞÉìëó²qP{v'h‘ùPˆ¸w5ØÍ¡á×Ó)çJÆ‡TY$Âg²m	5ÛºÎ¸F¥à‹Úá§ŸjÎ`ÒÄ÷ÁŞsyUàp´ïêÌÇşv‰Nf
+iˆ-íÃF¢*äŒÔœWF-XbÕÊ¨ú~øÂÙajË5] “£²e¨/íï˜çü~ºHôª¡qü“¯ê§NsˆiÕBÀù„’…OËT³=:øİ)eyÊC–¸‡X–!ïÑ‘{ £‚&0‚"0Uÿ0ÿ 0Uÿ0)U%"0 ++$
++ƒè^0U9=GÜ—¯ˆ{MsÍåî¤¥*0U 00
++ƒè^0U#0€ü*Ju:€ú™c“ğsWì¾“°}Ã{0x+l0j0$+0†http://ocsp-c2pa.ssl.com0B+0†6http://crt-c2pa.ssl.com/SSL.com-C2PA-Root-2025-RSA.cer0	*†H†÷ ‚ Î6ú>ï–6-¯Ufÿ{+ kVõË­½*­¥¦ĞM£>“ä“iÕäŒ¨næ7Tâ%œìef(<3=¢š¢»ÍgdJç¾t!¡nÃ«&Ä;,ÚU¹ıGNàx›7ƒÄt;ÅGaïmAr¤Û]CSÉ–Nåà:ß¨İ.Ñ¯X—Öçô_r#<kÏ½9«Œ“¨§vY>á’õ÷ÙûFb«nnÔˆF ³/*j_¥NÚøÔüÌÙ£<©wE
+Áù˜¹9ËÌ¡qÀ*‚qÓäö%âQ!mÖßäSoJ}^ÀºÕwy!zÎí÷›¶²ŠBVkA*şkœ‹î£(Ï_óéĞdÖîÂ‰Kë’Ïõ¯Â'M¸‘¡7%™æı€Üô¼Ç7{¾´-gXğ/çÃ³‹qåDz0¶¥²u>[#~;ÓT¦:¹ÇÌ3Õj5zv/şWÚiø>?ïT‹{FÃcúíÄ/p„+öV‚ô§Ë$×l^${:½©X;i³œÒptÿ‹n&»Ã«EÇS–œGµÆF«^õüˆ‹h£5å|j•eµ«ë¹ÿº¸à›JG²Îì/‰}î¯œMÄÉÎõ2=÷&4ş"‹zíù^^g_Q[Û$VûÑY¡·Şšf	¶Ñ†.ú}~•y›Df|6…öõ£gsigTst2¡itstTokens¡cvalY‹0‚‡	*†H†÷ ‚x0‚t10	`†He 0‡*†H†÷	 xv0t
++ƒ¿0010	`†He  8€ÆÛºs~Ó¯– [ª·GA™]Ü^)İhÏW|;Ÿa8X{
+ˆ20260914175729.396052Z0€	 ùø³×=ªëu ‚f0‚ö0‚^ aÛF(2ŠŒJ·¿ş`ãl?q·0	*†H†÷ 0{10	UUS10	UCA10USan Francisco10U
+OpenAI OpCo, LLC10
+UTSA10UOpenAI TSA Issuing CA0260408174626Z370709174626Z0u10	UUS10	UCA10USan Francisco10U
+OpenAI OpCo, LLC10
+UTSA10UOpenAI TSA Leaf0‚¢0	*†H†÷ ‚ 0‚Š‚ êÊÅ­”ığı'ŸÇx§aÊÿ)a*û¡ˆÍ_¨¢—‰/‹‘È¼°–=U‚Á–6j­‰ièÛ,D2ƒ¨
+Íwå5èî¨d[ş¸àç ¡(Ã5İ§7é"÷	M—š´„sÀ.|©PG( ´ğiğ°‡)zYş5BùÙiRJ 7òhÌñ-·‚– KF\=¤†¸KEf8¢NM'Ê•ºuÌN‡jŸtÃ $_Ä~\®şó•í ‘ß<õ†›*^ÖĞİÉúÈMÃÉ„ZI,ä8s`R¸LîÆó·¶Øİj©Î º]ÖÄ\5dò#S?be]p+ÔÉk	ERèWíZF]Ú]vœ%yhƒQ¤˜„u‘r˜UÿØãCb±íig'A¼Åòj+ƒIèá-4»9¯g½´•È²½EgÍrˆ”_UK,­¯í¥ô$¯w>ƒŠdQ‘Œ9–K°=®ú™¡>Œ=ğ¾6¡.õcµ £x0v0Uÿ0 0UÿÀ0U%ÿ0
++0U¤'T‚¢Š€{=Å†Í?pÙÂƒ™Qx0U#0€òğ°ÇT=#C…ÜÊsĞr€=¸¨0	*†H†÷ ‚  û$OAÀÀ¼˜²2  ™H5OÄFV~§>?¶¥#ù*H>àQE@xÁ»ƒN“PÉ›'–hßMÎòöÒy«ïêÁÚ?õ˜YæpÍ‰ôîG‹ªËìÿŒ~áFØ‘æœ¸ä4FÿaÒxø}89ãRí_fèsÀ r;ä¨«†*£7!ù;ß{\TØLÇj*KÏCt`€s£ÉÑw¯‡©ıµ±„jn¿ˆ*Îš¡š«¢‚H7ÅcQ—ÛR|ogÉiBÕÏõû­^‹âày<.ƒj¥è%A…íäÁ :şRPï‡ŞádÍUù! ß¶)ïŸ'nÑº4F«J"OçbwİE#İa-Â1)Ä¹~y«´WÔÁìÏá\{eI°ëM«¤Ç'@N¦´µÏ|Ã´C§vÓ^0cî¨®5(td«Z5ã[/:>N
+aÖ0MC›ÿN.Æ!¹>:, W0ujdK¢Ğ	Ñ× g&Amgøpv¸%&Vù‘&'ÃKI0‚~0‚f ÊÆÅÅÚ°¼ñN•¥ê¼0	*†H†÷ 0x10	UUS10	UCA10USan Francisco10U
+OpenAI OpCo, LLC10
+UTSA10UOpenAI TSA Root CA0 260408174626Z21260409174626Z0{10	UUS10	UCA10USan Francisco10U
+OpenAI OpCo, LLC10
+UTSA10UOpenAI TSA Issuing CA0‚¢0	*†H†÷ ‚ 0‚Š‚ ‰¼Ô¹âÈ¡¾a»Ş<df~§¾œmÓ©0&<ôàk 9ß•4í©¢eHÛ7†2ƒÌ
+J Àó4l À˜Í+Ÿ¥ôË|Ù&Ş~ÉM¢ïc[‘æöY¨ÒúNùÙ8+ZÍ`Z˜˜¨×SÆãÖ.H¬CW	é”òGùlEŠ`·÷®/^¢5N…8…iŸ4ĞMØC=Í4müc“üÓp»JèvèjNfI íüø¾ïš·¨w¬ï·8Ì¹Ô*3ÄvÖ@wËşÇ]-@ÓŞ‹<ÀÖ@A™Ë”?,} kRüÊP·	GEá#Uú±OoT˜•ô}ºøhá"zÜŠ‘C‹¶.C±b ¾Ê$.ï¿¤ÑMè¸?1Ï&=Å PêòÙ$ díÕs.pxªŞV<ùÔ€¢è­¯öû¨£\Ëh«DÛ0wòÄ4tkUmÆ‡ûò2<qE÷ìPûşÖ1&»ĞÄMaâBÛ¯Ã+n_+æâ°ï\DÍÀs}¢é½m‚¼%e„0ií £{0y0Uÿ0ÿ 0Uÿ0U%0
++0Uòğ°ÇT=#C…ÜÊsĞr€=¸¨0U#0€XÂ@ <Gv+¨æn¨‘––È·Ùä0	*†H†÷ ‚ ’ì7\ŞlëdÚ®¡	0r®Ürõ;¼z=ÖÆá/öƒ3}èW@NL™ªkÔ™Ù‹ÛkÖLøÊĞY3Ó¡ 8\#ˆD$û‡áö“'¼¡íL_g]ÿ5«1Òì{Ô@C7OÂ„œºdÈ°¢~š6øáĞ‚³PC²àU½€”ÈYRNJtŞ]ÇEX›·ú0ª;ÜG¼Õ.,¹8c,yZ·İU­=BßˆÏñhşs ÔZ·Ş$—‘ÀçgşÜ¦
+ó¥F³QÏ¯_ãÈ¸@Æ½ãùÖKqĞd]ådÂKÀ^wÑ=Ç[Ï{ı””çKQÚûdô«ğ5”ñö¾~+İ²š=PİPÃ–dm«sŸ(;wĞ—íoEO±3._Fëƒ¶©a¼×‚®ø€oÂãi0æm|:D’+˜-¯Ü4Á¾¥*Hç‡ÈŞ8µ3Êã„Ppñ²KŞOö‘Ü_…úñæÑ×Ê§î´Ÿö!x)ğãpXw†¤:K—ƒFèÚÂjvÉ©Ë!E¾e± †.€¼YKM›Cm´×„àüğÕÈaCjÃñ!<„]ş;ÖØ#9E_qú2ı €•DµO åÃtıâN‡r†ôğQ‡½Ôµ+5l’¤;kjºıÀ;œvÂÕ9IÚã”>Pj×Lâ‰aïëÏÅÃ@npz80‚æ0‚Î P;l‰Œğ$3,÷Oû}‚ì0	*†H†÷ 0x10	UUS10	UCA10USan Francisco10U
+OpenAI OpCo, LLC10
+UTSA10UOpenAI TSA Root CA0 260408174625Z21260409174625Z0x10	UUS10	UCA10USan Francisco10U
+OpenAI OpCo, LLC10
+UTSA10UOpenAI TSA Root CA0‚"0	*†H†÷ ‚ 0‚
+‚ ö’éÒº­á¬u¨VØª±³j’_–yõ’·-$ø¿À¯`¾ÁšÍyšÜlšş6šÁ˜¤?ä,º¥¥Ps³
+ÂùóÄI/x½Òì¼ç?ô›Ñò a¢,‰%ÊQù%œÒÆ/ô‰ÄAş&Óm5Íì»5`@¨…Q¾öî˜ñ*ØzkjÙ.Ùcóå\)Å†"ÁŠhÍë8©P–[#Cû8ÿB|;:¡Q/%ÉHÜ1ÿPrîğ|¡wÍoaó?¿nèÒ±¦6äk2ûşw¨^›\İİ1LeÿËAÎ(1SÊCÎHn}Öd³)ä´.:·TZrVWó¨j}ïæaİeÈH	I™2tğ
+¢Ìİ“ S¬#½‚… ±ï¾í¡w î:F3¢ì¯é1f´fo²‰“ ~•!ÎAø^ğéÍ¹ÀÕ3]xĞĞ'1ÏP0rsÚjÂÀ“Ï­Üd‡öûNˆvõ>ïÿ’,™w.öÜ˜¶	:ıô	Ç_Zé~H	+µŠƒò[<,¯‘¢A·RhÑ¿°ÀÚO`½î)ªí‡q\(Œˆ£%cEØü{alFT;\É°‚¯ƒÈ±#?Ÿ[î¢×Tµ*S®»…Û¦ú—ì„‰róz@É¶…XG[ñ$a9¢LŞØÆ¨"ò¿[L,Ë £f0d0Uÿ0ÿ0Uÿ0UXÂ@ <Gv+¨æn¨‘––È·Ùä0U#0€XÂ@ <Gv+¨æn¨‘––È·Ùä0	*†H†÷ ‚ Xø‘˜òlaşÈ†Ö[„¦Ö¾¸¦]]IË¸¡)Í-¸Xùğ„‰=<øoÕj´*¢U’ğg™^µTûšF€ãQ SÀÁˆWŞï‚U~ãô}ë&üƒÿ!¨Á¬ŞÛ“«ÍĞ0v:“Îªg9.€tßmğ~v/éêPA‹8=låà>î/ÛdT6^¾bE¶Ñ!´€<ŒëÚœÖJ©ÕTe[kÑX~ÀI‡ëëK_’;”×š†ö¡YÎGğ8¬Ã°tdÑÀR;¡±{(kái—ø(;'ÿ®¤÷eË ôê¹½”ÎDâ˜±
+HhîU©!¥`şÊÖ}Ñ{† œó¨xĞÆÚ@.È\b¨*ÁûVçy¯ìåÛÓpşFÌc¨dñ<é¯¥d¼^¿…-°Îã¹Ó¤×R»p‹†û.¿
+öÒU+#B+C\ì¡‚a?Ïqí°÷—éäËÂ<ü¬w·¶Ü ÁLé‰²²/Ã~’dœµ„ŞÌ–ı‰°KµC}Òé­†ıÙ-Ÿ½ îÀ´GV#|H‘Ng‰ {bÁÉ^UñöÆQ#Woï‡¾ Fy¾”±È (•Šˆ&UfRïÙKº¨ZéÂ,­ŸÃ\Bó¡õ'dyqŒ
+Zı¹ùEypájµ7–XıE¿T%Œƒ=Ù&3#ĞXw¦¸1‚h0‚d0“0{10	UUS10	UCA10USan Francisco10U
+OpenAI OpCo, LLC10
+UTSA10UOpenAI TSA Issuing CAaÛF(2ŠŒJ·¿ş`ãl?q·0	`†He  ‚%0	*†H†÷	1*†H†÷	0/	*†H†÷	1" Æì´eW¦¶Ræåböğ£G‚l¡o­´ÖY>&‹LÌB÷0Õ*†H†÷	/1Å0Â0¿0¼ ½O¹²L6gˆnïAámşÙ"¿[’JĞ¢Ä`F"z0—0¤}0{10	UUS10	UCA10USan Francisco10U
+OpenAI OpCo, LLC10
+UTSA10UOpenAI TSA Issuing CAaÛF(2ŠŒJ·¿ş`ãl?q·0	*†H†÷ ‚€HÁ®qlÙÉÆvÛö•ï×êgÇáÌövs§úJËs!%•O€5¡-à‰áÏ–AúÅ5ıùgduqó
+¨÷;à!?'0¹–GŸy_¥½ÿ_9İÀÅŞEÉ)¼”5å?ƒC±8ÃÅyM®ÓnQAq‘±;¯İ\+aèGíóèöÚÈÁÜCPõú†0(!½Ä3jw½ñ+ş¶²®<µ¶«ÿ…0ú"ËKÆu“`¶ ™›XŸ±~¨rÚf29ïúC±B4´Ô»AuF…Œiñ,y¸&˜txÀ¡Ú'š^p(©Œ¶w°©F¥®*árê¡˜€SÏ¼"Ğbïæ>R	µ±şÔ4ãö²È¯›rF¢Y5Aß¿Ãõ:IÚÏT w¢£1~æc …À·Äß×\Ghjj6?)¬
+yâ9f@°s®D=¬ÛÿÀİ1!Ù¼ÈP¿~­×ÅLe³‰òûãÓ?àİ» 2¬›k(q¨Å½hs™1áÜperVals¡hocspValsY×0‚Ó
+  ‚Ì0‚È	+0‚¹0‚µ0é¢=ªªxúöLú^jÑ@MåTò®20260913220306Z0˜0•0I0	+ ß‚7S^SØ3±à=$5ñuæá
+9=GÜ—¯ˆ{MsÍåî¤¥*¥üépŒò€1îDds€ 20260913220306Z 20260920220305Z¡"0 0	+020160915220306Z¡#0!0	+0 4¦&]r‘G8—{À „0	*†H†÷ ‚ oÏjæDd?òMÚ¸àÀÓvS(ö¨Å@P$ÑT‰]TßËx¹AÀaGIYahÍ=ä£†u¶–Ğù†—³KÛJîÒ­+*^wœÓ4ëíÖ
+¹ëğÇšeÍòN)—¯2…·H_«¯2ô¦ÌÊ·Æu•zhˆyAÁ)r”Û™ÂÇµ>¿©‡‰Ì$ómSlæU­äö AÒ},ˆ±^’‰Be,1Tú]Ìåb¼+`æT7HaàÿÖ!çqƒnN]p úão¤‘@,F©„ó?&•H¶$ĞWäaˆû<c¢GÃÈƒ{ßÚmş¤É+{Të­ÏõÑ›®MÙ1¾fîÛNs"à£Ê¾œ¼×À9¬?H†}üQ#IÙrp¸o«°íâİÑæ+6Z~‰X3(Rïb„¨D¢TYİ‡¡(ü­ºIŸÅÆQvP†àòÕW-C‚Ì%ÂåcEEşáwµÛŒ¨8vüe³É("~ô.Ø1œ:¿¾[ï¯¿©¼à9g ‚10‚-0‚)0‚ ZJ²?Ğ(ÆşK³?n=ã'º0	*†H†÷ 0J1!0USSL.com C2PA ICA R1 202510U
+SSL Corporation10	UUS0260102201415Z270102201414Z0M10	UUS10U
+SSL Corp1+0)U"SSL.com C2PA ICA R1 OCSP Responder0‚¢0	*†H†÷ ‚ 0‚Š‚ ¢P“AæJKŞ›¦•t&X<ìRü»”2ÍÃÆPßĞ½œÆnp‹#—×ŒîÌ|Vîg¾ùšÀ’°ëº¥3ÿmiƒ/ˆ-í°K],›¹¸e$cî°$`
+èøyÆÓa5[Œ—XŸ³Œ\ØäÆ¦ĞCğ³§ÓTÙlˆ÷§¸ÄØnı1(Ş	.'õsÙw¦ÕPš Ù¼Ë2ÅF¹ü¢UMî ›¬hjÁ?8*zØÓ]º´³ëU)îìÒ7Ÿ®Å6©œ°·ŞD*‹èP§ €y{%ÏÙ9òE›wºx	 ¦N{@1ıê"h‡€Ä‚!äOZòóˆ¤K‰*~L$&© šÉ|îkb…"2îÖÜ+ÒßÖF4v ‚(x¾*İäÖj*wÛtz5'¦‡Á¸ğ:SªšÖ+“¯ã›·eÒ&0J¥¾Êñ‹Z4¦¡Ò…r8X9Äì>2„ß7yÖ0Ó7xæèÍ’én+nì0ë28.©<Ò-å £‡0„0Uÿ0 0U#0€9=GÜ—¯ˆ{MsÍåî¤¥*0	+0 0U%0
++	0U=ªªxúöLú^jÑ@MåTò®0Uÿ€0	*†H†÷ ‚ »s¦U„£hPëñ l×É)„>¨/í
+» ë«ËÁ¸†·0%Hmóá½¡M(Ò+e`DÜ¶«U?×İ…şğ—[$,ì­KKô»	ú°à°°ıDr´jİcèë²ÖÔÇñç‹ßßlÄ	¢ı=sXÁ()¢k`i0);U´Œ©¤©p>nrÄv0i‚O%´OUÎéHÏ_‹ÍğVkßÜ†6ğ5Á7•s¸í¶¨D¾ö—ŞI¼¡>r'Ğ=!|R\P©ÇÜ©û÷m°*& ”ßd…Œ§=Š:1t‘!áìJß…hÎa©¤k23ÓhæÉ¿³üÿ•ñ×ÂeJlNGş¨`”whAÎN(D¥Æ˜‡¨5òfª$½jÁ® kŞt£w&e§¥Â(%ı>©åI¹ÿthrGPûtš"h…Œ¿ƒ œÙãm¢<\ÇN¥vÒÿÂªÅ®´ü*Bl'¨´Ö9Ë™XËÃ±ü6è5ÔË^É˜˜Îè‚‹íXaºa‘Ñ©zÉ>Xàü”HLtæÏÔ|³òè#Kè0h»'ì¹ö	¶íy“å
+‚µÇç.Æ…k“¥AY)”ºXÓo–MŸQ3‘?À¸PÏµº`ˆé7
+L–Ÿ#xÚÁÊÅ–>lú_ 7Vß	!˜’y÷À¿ãÎ’§«,W=AÔ‰à?cpadY&u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     öY ®ÍƒgÀ/>X¬ÏqæS†Â¦/ÒY‹´î¹ñ3]˜ãïŒgURú¬w£Hš6)ùÓ	Íbo®”{Y]‹áíáeğËØa0%k>½0@y}8d¤Íåûˆ|¶ë‡óM¿…C	“ë¡Ábõ}¤)Z¤‚ˆ-ú>r‡|CxIE¯¶gÏ)åJe©«>ôÜ‘œèÃPï;Ö¸	oZ¬›Ó<à\¶e¹‹¥'š{¶SÎÈ«í¼âäqjHÿãÎT?+/#©î‹ÛšÚM\\¥„öå¦ÿOÉÂá[úƒëÑà÷ÜÒp"È'xØzİédg;xÎ‹Ş
+endstream
+endobj
+20 0 obj
+<< /AFRelationship /C2PA_Manifest /Desc (Content Credentials) /F (Content Credentials) /EF << /F 19 0 R >> /Subtype (application/c2pa) /Type /FileSpec /UF (Content Credentials) >>
+endobj
+xref
+3 1
+0000010459 00001 n 
+19 2
+0000010594 00000 n 
+0000034987 00000 n 
+trailer
+<< /Size 21 /Root 3 1 R /Prev 10000 >>
+startxref
+35183
 %%EOF

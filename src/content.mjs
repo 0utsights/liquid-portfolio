@@ -8,14 +8,14 @@ export const projects = [
     sourceNote: 'Source code is private.',
   },
   {
-    slug: 'aeyori', number: '04', title: 'Aeyori / KarutaBot', category: 'OCR & automation', date: 'March 2026 — Present', archived: true,
-    summary: 'Open-source OCR and scheduling client for the Karuta card game.',
+    slug: 'aeyori', number: '02', title: 'Aeyori / KarutaBot', category: 'Python workflows & application development', date: 'March 2026 — Present',
+    summary: 'Built an open-source Python client that coordinates card-image OCR and scheduled workflows for Karuta, with configurable profiles, cooldown handling, and activity logs.',
     stack: ['Python', 'FastAPI', 'EasyOCR', 'Selenium', 'PostgreSQL'],
     contribution: ['Built the OCR pipeline with Python, EasyOCR, and Selenium.', 'Built a FastAPI backend and dashboard with authentication and license-key management for an earlier hosted version.', 'Worked with contributors to improve recognition reliability and processing options.'],
     links: [['Code on GitHub', 'https://github.com/0utsights/KarutaBot']],
   },
   {
-    slug: 'opsdeck', number: '02', title: 'OpsDeck', category: 'Systems & developer tooling', date: 'August 2026 — Present',
+    slug: 'opsdeck', number: '04', title: 'OpsDeck', category: 'Systems & developer tooling', date: 'August 2026 — Present', archived: true,
     summary: 'Built a Go dashboard and SSH metrics probe for Linux servers, with Docker health checks, live container placement, and explicit handling of stale agent heartbeats.',
     stack: ['Go', 'Linux', 'SSH', 'Docker'],
     contribution: ['Built local and SSH-based probes for CPU, memory, disk, network, and container health.', 'Derived site placement and migration states from live Docker observations rather than maintaining a second placement database.', 'Used file-based agent heartbeats with explicit stale-state handling; kept the dashboard independent of any particular AI framework.'],
@@ -43,7 +43,7 @@ export const engineeringNotes = {
     flow: [['Identity', 'Discord + Roblox'], ['Application', 'Next.js + Prisma'], ['Persistence', 'PostgreSQL']],
   },
   aeyori: {
-    label: '04 / OCR & automation', outcome: 'Open-source Python client',
+    label: '02 / Python & workflow coordination', outcome: 'Open-source Python client',
     problem: 'Card-image recognition and scheduled routines need to work together while giving the user clear configuration, activity feedback, and stop controls.',
     decision: 'Built a local EasyOCR pipeline and workflow coordinator with cooldown handling, configurable routines, independent profiles, and activity logs.',
     detail: 'Packaged the client for Windows with PyInstaller. A bundle-check command validates OCR and Selenium dependencies, including Selenium Manager, without opening the interface or logging in.',
@@ -51,7 +51,7 @@ export const engineeringNotes = {
     flow: [['Recognize', 'EasyOCR image pipeline'], ['Coordinate', 'Routines + cooldowns'], ['Operate', 'Profiles + activity logs']],
   },
   opsdeck: {
-    label: '02 / Linux & observability', outcome: 'One native Go binary',
+    label: '04 / Linux & observability', outcome: 'One native Go binary',
     problem: 'Server health, container placement, and agent progress are spread across different machines and processes.',
     decision: 'Combined a terminal interface and on-demand metrics probe in one Go binary. Remote collection uses SSH; the system needs no web server or metrics database.',
     detail: 'Migration states come from live container placement. Agent heartbeats use a small JSON contract and become stale after 90 seconds, so old progress is visibly distinguishable from current activity.',
