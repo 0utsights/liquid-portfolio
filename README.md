@@ -36,8 +36,9 @@ DNS uses the existing GitHub Pages apex A records and `www` CNAME pointing to `0
 - Navigation, browser history, and PDF opening use native browser behavior.
 - Keyboard navigation, a skip link, visible focus, print styles, and reduced-motion support are included.
 - Header identity and contact links are always visible; the header wraps on small screens.
-- Engineering notes use native HTML disclosures, open by default on project pages. System diagrams are semantic HTML; the marketplace screenshot is local and lazy-loaded. The blue-ink visual system uses the existing local font and no additional assets.
-- No canvas, animation runtime, audio, client routing, trackers, cookies, or third-party runtime scripts.
+- Engineering notes use native HTML disclosures, open by default on project pages. System diagrams are semantic HTML; the marketplace screenshot is local and lazy-loaded. The blue-ink visual system uses the existing local font and one shared contour SVG.
+- A decorative SVG contour field is generated at build time. Desktop motion uses only a slow CSS transform with a native pause checkbox; reduced-motion, touch devices, and small screens stay static. The background is hidden in print and forced-colors modes.
+- No canvas, JavaScript animation loop, audio, client routing, trackers, cookies, or third-party runtime scripts.
 - `/personal/` redirects to `/about/`. A custom 404 provides recovery links.
 
 The local EB Garamond font is distributed under the SIL Open Font License; see `public/fonts/OFL.txt`.

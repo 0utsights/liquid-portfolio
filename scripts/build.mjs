@@ -1,5 +1,6 @@
 import { mkdir, writeFile, cp, rm, readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+import { createBackground } from '../src/background.mjs';
 import { resolve, join } from 'node:path';
 import { projects, featuredProjects, engineeringNotes, contributions } from '../src/content.mjs';
 
@@ -12,6 +13,7 @@ await mkdir(output, {recursive:true});
 await cp(join(root, 'public'), output, {recursive:true});
 await cp(join(root, 'CNAME'), join(output, 'CNAME'));
 await writeFile(join(output,'.nojekyll'),'');
+await writeFile(join(output,'contours.svg'), createBackground());
 const ext = (label, href) => `<a class="text-link" href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`;
 const tags = items => `<ul class="technology-list" aria-label="Technologies">${items.map(item=>`<li>${item}</li>`).join('')}</ul>`;
 const displayTitle = p => p.slug === 'deepwoken-trade' ? 'Deepwoken.<wbr>trade' : p.title;
@@ -72,7 +74,7 @@ function page(route) {
  const nav=[['Overview','/','home'],['Work','/work/','work'],['Research','/research/','research'],['About','/about/','about']].map(([name,url,key])=>`<a href="${url}"${key===active?' aria-current="page"':''}>${name}</a>`).join('');
  return `<!doctype html>
 <html lang="en" data-page="${route.key}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f7fa"><title>${route.title}</title><meta name="description" content="${route.description}"><link rel="canonical" href="https://johnsurles.com${route.path}"><meta property="og:type" content="website"><meta property="og:title" content="${route.title}"><meta property="og:description" content="${route.description}"><meta property="og:url" content="https://johnsurles.com${route.path}"><meta name="twitter:card" content="summary"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preload" href="/fonts/editorial.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/styles.css?v=${styleVersion}"></head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-identity="visible"><nav class="main-nav" aria-label="Main navigation">${nav}</nav><div class="header-identity"><a class="wordmark" href="/" aria-label="John Surles, home"><span class="monogram" aria-hidden="true">js.</span><span>John Surles</span></a><div class="header-actions" id="contact"><a class="text-link" href="mailto:surlesjohn@outlook.com">Email</a><a class="text-link" href="/John-Surles-Resume.pdf?v=${resumeVersion}" aria-label="Resume (PDF)">Resume</a></div></div></header><main id="main" tabindex="-1">${route.body}</main><footer class="site-footer"><div class="footer-bottom"><span>© 2026 John Surles</span><div class="footer-links">${ext('GitHub','https://github.com/0utsights')}${ext('LinkedIn','https://www.linkedin.com/in/john-surles-650a16389/')}<a class="text-link" href="mailto:surlesjohn@outlook.com">Email</a><a class="text-link" href="/John-Surles-Resume.pdf?v=${resumeVersion}">Resume PDF</a></div></div></footer></body></html>`;
+<body><div class="ambient-field" aria-hidden="true"><img class="ambient-contours" src="/contours.svg" width="1600" height="1100" alt="" decoding="async"></div><a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-identity="visible"><nav class="main-nav" aria-label="Main navigation">${nav}</nav><div class="header-identity"><a class="wordmark" href="/" aria-label="John Surles, home"><span class="monogram" aria-hidden="true">js.</span><span>John Surles</span></a><div class="header-actions" id="contact"><a class="text-link" href="mailto:surlesjohn@outlook.com">Email</a><a class="text-link" href="/John-Surles-Resume.pdf?v=${resumeVersion}" aria-label="Resume (PDF)">Resume</a></div></div></header><main id="main" tabindex="-1">${route.body}</main><footer class="site-footer"><div class="footer-bottom"><span>© 2026 John Surles</span><label class="motion-control"><input type="checkbox" id="pause-background">Pause background motion</label><div class="footer-links">${ext('GitHub','https://github.com/0utsights')}${ext('LinkedIn','https://www.linkedin.com/in/john-surles-650a16389/')}<a class="text-link" href="mailto:surlesjohn@outlook.com">Email</a><a class="text-link" href="/John-Surles-Resume.pdf?v=${resumeVersion}">Resume PDF</a></div></div></footer></body></html>`;
 }
 for (const route of routes) {
  const dir=join(output,route.path);await mkdir(dir,{recursive:true});await writeFile(join(dir,'index.html'),page(route));
