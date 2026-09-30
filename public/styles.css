@@ -1,34 +1,39 @@
-/* A plain single column of white cards on teal, after unhappychoice.com. No web fonts, no JavaScript. */
+/* A plain single column of white cards, after unhappychoice.com's layout. Neutral page, one accent color
+   (links, active tab, monogram, focus). Change --accent and --accent-tint together; keep --accent at
+   4.5:1 or better on white. */
 :root {
-  --teal: #357c96;
-  --teal-dark: #1f6680;
-  --ink: #212529;
+  --page: #f4f5f7;
+  --surface: #fff;
+  --line: #e1e4e8;
+  --accent: #1f6680;
+  --accent-tint: #e8f1f5;
+  --ink: #1f2328;
   --muted: #5f6368;
-  --rule: rgba(0, 0, 0, .16);
-  --rule-strong: rgba(0, 0, 0, .24);
+  --rule: rgba(0, 0, 0, .12);
+  --rule-strong: rgba(0, 0, 0, .16);
   font-family: Rubik, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--ink);
 }
 * { box-sizing: border-box; }
-html { background: var(--teal); -webkit-text-size-adjust: 100%; }
+html { background: var(--page); -webkit-text-size-adjust: 100%; }
 body { margin: 0; font-size: 1rem; line-height: 1.7; }
 h1, h2, h3, p, ul, dl, dd { margin: 0; }
 h1, h2, h3 { font-weight: 500; line-height: 1.3; color: rgba(0, 0, 0, .87); }
-a { color: var(--teal-dark); text-decoration: underline; text-decoration-color: rgba(31, 102, 128, .35); text-underline-offset: .2em; }
+a { color: var(--accent); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent); text-underline-offset: .2em; }
 a:hover { text-decoration-color: currentColor; }
-:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 main:focus { outline: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .skip-link { position: absolute; left: 1rem; top: 1rem; z-index: 10; padding: .5rem 1rem; background: #fff; color: var(--ink); transform: translateY(-200%); }
 .skip-link:focus { transform: none; }
 
-.page { display: grid; gap: 8px; max-width: 720px; margin: 0 auto; }
-main { display: grid; gap: 8px; }
-.card { background: #fff; }
+.page { display: grid; gap: 12px; max-width: 720px; margin: 0 auto; padding: 24px 0 40px; }
+main { display: grid; gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
 
 /* Masthead */
 .masthead { padding: 28px 24px 24px; text-align: center; }
-.mark { display: grid; place-items: center; width: 88px; height: 88px; margin: 0 auto 14px; border-radius: 50%; background: var(--teal); color: #fff; font-size: 30px; font-weight: 500; letter-spacing: .04em; }
+.mark { display: grid; place-items: center; width: 88px; height: 88px; margin: 0 auto 14px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 30px; font-weight: 500; letter-spacing: .04em; }
 .masthead h1 { font-size: 26px; }
 .subtitle { margin-top: 4px; color: var(--muted); }
 .status { margin-top: 10px; font-size: 14px; color: var(--ink); }
@@ -47,9 +52,9 @@ main { display: grid; gap: 8px; }
 
 /* Tabs */
 .tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.tabs a { display: block; padding: 14px; background: #fff; text-align: center; font-size: 15px; color: var(--muted); text-decoration: none; }
+.tabs a { display: block; padding: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; text-align: center; font-size: 15px; color: var(--muted); text-decoration: none; }
 .tabs a:hover { color: var(--ink); }
-.tabs a[aria-current=page] { color: var(--ink); font-weight: 500; box-shadow: inset 0 -3px 0 var(--teal); }
+.tabs a[aria-current=page] { color: var(--accent); background: var(--accent-tint); border-color: var(--accent); font-weight: 500; }
 
 /* Cards */
 .card h2 { padding: 22px 24px; font-size: 22px; border-bottom: 1px solid var(--rule-strong); }
@@ -81,17 +86,21 @@ main { display: grid; gap: 8px; }
 .pr-repo strong { color: var(--ink); font-weight: 500; }
 .pr h3 { font-size: 17px; }
 .pr h3 a { color: rgba(0, 0, 0, .87); text-decoration-color: var(--rule-strong); }
-.pr h3 a:hover { color: var(--teal-dark); }
+.pr h3 a:hover { color: var(--accent); }
 .pr-number { color: var(--muted); font-weight: 400; }
 .pr-detail { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 6px 12px; font-size: 15px; line-height: 1.6; }
 .pr-detail dt { color: var(--muted); font-size: 14px; }
 
 .actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.button { display: inline-block; padding: 8px 16px; border: 1px solid var(--teal); background: var(--teal); color: #fff; text-decoration: none; }
-.button-quiet { background: #fff; color: var(--teal-dark); }
+.button { display: inline-block; padding: 8px 16px; border: 1px solid var(--accent); border-radius: 4px; background: var(--accent); color: #fff; text-decoration: none; }
+.button-quiet { background: var(--surface); color: var(--accent); }
 
 .footer { padding: 18px 24px; text-align: center; font-size: 14px; color: var(--muted); }
 
+@media (max-width: 45rem) {
+  .page { padding: 12px 12px 32px; gap: 10px; }
+  main { gap: 10px; }
+}
 @media (max-width: 40rem) {
   .card h2 { padding: 18px 20px; font-size: 20px; }
   .card-body { padding: 18px 20px 20px; }
@@ -101,7 +110,7 @@ main { display: grid; gap: 8px; }
 @media print {
   html { background: #fff; }
   .tabs, .skip-link { display: none; }
-  .page { gap: 0; max-width: none; }
-  .card { border-bottom: 1px solid #ccc; break-inside: avoid; }
+  .page { gap: 0; max-width: none; padding: 0; }
+  .card { border: 0; border-bottom: 1px solid #ccc; border-radius: 0; break-inside: avoid; }
   a { color: inherit; }
 }
