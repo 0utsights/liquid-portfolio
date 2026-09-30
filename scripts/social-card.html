@@ -1,42 +1,26 @@
 <!doctype html>
 <!-- Source for public/images/social-card.jpg (1200×630) and public/apple-touch-icon.png (180×180).
-     Background: pass ?bg=<image> with a 1200×630 capture of the live contour field (the site with its
-     content hidden); without it, the build-time SVG contours in dist/ are used (run `npm run build`).
-     Render at 1200×630 in a Chromium browser and save a screenshot. `#icon` renders the touch icon at 180×180. -->
+     Render at 1200×630 in a Chromium browser and save a screenshot; append #icon at 180×180 for the icon. -->
 <html lang="en"><head><meta charset="utf-8"><title>Social card</title>
 <style>
-@font-face{font-family:Editorial;src:url('../public/fonts/editorial.woff2') format('woff2');font-weight:400 700}
 *{box-sizing:border-box}html,body{margin:0}
-body{width:1200px;height:630px;overflow:hidden;background:#060a13 url('../dist/contours.svg') 70% 30%/cover no-repeat;color:#e9eef8;font-family:system-ui,'Segoe UI',Roboto,Arial,sans-serif;position:relative}
-.shade{position:absolute;inset:0;background:linear-gradient(90deg,#060a13f2 0%,#060a13cc 42%,#060a1300 75%)}
-.card{position:relative;height:100%;padding:64px 80px;display:flex;flex-direction:column}
-.top{display:flex;align-items:center;gap:16px;font-size:24px;font-weight:600;margin-bottom:auto}
-.mono{display:grid;place-items:center;width:52px;height:52px;background:#e9eef8;color:#060a13;border-radius:12px;font-family:Editorial,Georgia,serif;font-size:32px}
-.status{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;padding:10px 18px;border:1px solid #2b3c5a;border-radius:999px;background:#0c1424d9;font-size:22px}
-.status i{width:11px;height:11px;border-radius:50%;background:#5ee6a8;box-shadow:0 0 0 5px #5ee6a826}
-h1{margin:22px 0 14px -4px;font-family:Editorial,Georgia,serif;font-weight:400;font-size:136px;line-height:.9;letter-spacing:-.055em}
-h1 em{font-style:normal;color:#8fb0ff}
-.line{font-size:30px;line-height:1.35;color:#aeb9cd;margin:0}
-.line b{color:#e9eef8;font-weight:500}
-.foot{display:flex;gap:28px;margin-top:30px;font:500 21px/1 ui-monospace,'Cascadia Code',Consolas,monospace;color:#8592ab}
-.foot span b{color:#5ee6a8;font-weight:600}
-body.icon{width:180px;height:180px;background:#e9eef8}
-body.icon>*:not(.icon-mark){display:none}
-.icon-mark{display:none}body.icon .icon-mark{display:grid;place-items:center;width:180px;height:180px;color:#060a13;font-family:Editorial,Georgia,serif;font-size:104px;padding-bottom:10px}
+body{width:1200px;height:630px;display:grid;place-items:center;background:#357c96;font-family:Rubik,system-ui,'Segoe UI',Roboto,Arial,sans-serif;color:#212529}
+.card{width:920px;padding:56px 64px;background:#fff;text-align:center}
+.mark{display:grid;place-items:center;width:120px;height:120px;margin:0 auto 26px;border-radius:50%;background:#357c96;color:#fff;font-size:42px;font-weight:500;letter-spacing:.04em}
+h1{margin:0;font-size:64px;font-weight:500;color:rgba(0,0,0,.87)}
+.sub{margin:10px 0 0;font-size:30px;color:#5f6368}
+.status{margin:30px 0 0;padding-top:26px;border-top:1px solid rgba(0,0,0,.16);font-size:26px}
+body.icon{width:180px;height:180px;background:#357c96}
+body.icon .card{display:none}
+.icon-mark{display:none}body.icon .icon-mark{display:grid;place-items:center;width:180px;height:180px;color:#fff;font-size:72px;font-weight:500;letter-spacing:.04em}
 </style></head>
 <body>
-<div class="shade"></div>
 <div class="card">
- <div class="top"><span class="mono">js.</span><span>John Surles</span></div>
- <p class="status"><i></i>Open to Summer 2027 software engineering internships</p>
- <h1>John Surles<em>.</em></h1>
- <p class="line"><b>Backend &amp; full-stack.</b> Computer Science · Virginia Tech · May 2028</p>
- <div class="foot"><span><b>1,000+</b> users</span><span><b>3,000+</b> downloads</span><span><b>5</b> merged PRs</span><span>johnsurles.com</span></div>
+ <div class="mark">JS</div>
+ <h1>John Surles</h1>
+ <p class="sub">Software Engineering Student · Virginia Tech</p>
+ <p class="status">Seeking a Summer 2027 software engineering internship</p>
 </div>
-<div class="icon-mark">js.</div>
-<script>
-const bg = new URLSearchParams(location.search).get('bg');
-if (bg) document.body.style.backgroundImage = `url('${bg}')`, document.body.style.backgroundSize = 'cover';
-if (location.hash === '#icon') document.body.className = 'icon';
-</script>
+<div class="icon-mark">JS</div>
+<script>if (location.hash === '#icon') document.body.className = 'icon';</script>
 </body></html>
