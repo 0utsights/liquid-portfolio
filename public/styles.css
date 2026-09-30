@@ -2,15 +2,17 @@
    (links, active tab, monogram, focus). Change --accent and --accent-tint together; keep --accent at
    4.5:1 or better on white. */
 :root {
-  --page: #f4f5f7;
+  /* Warm neutrals with a rust accent taken from the autumn leaves in the profile photo
+     (#9a4a1f is about 6.2:1 on white; muted text is about 5.8:1 on white, 5.4:1 on the page). */
+  --page: #f7f5f2;
   --surface: #fff;
-  --line: #e1e4e8;
-  --accent: #1f6680;
-  --accent-tint: #e8f1f5;
-  --ink: #1f2328;
-  --muted: #5f6368;
-  --rule: rgba(0, 0, 0, .12);
-  --rule-strong: rgba(0, 0, 0, .16);
+  --line: #e8e2db;
+  --accent: #9a4a1f;
+  --accent-tint: #f8eee6;
+  --ink: #24201d;
+  --muted: #685f57;
+  --rule: rgba(60, 40, 20, .12);
+  --rule-strong: rgba(60, 40, 20, .16);
   font-family: Rubik, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--ink);
 }
@@ -33,7 +35,7 @@ main { display: grid; gap: 12px; }
 
 /* Masthead */
 .masthead { padding: 28px 24px 24px; text-align: center; }
-.mark { display: grid; place-items: center; width: 88px; height: 88px; margin: 0 auto 14px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 30px; font-weight: 500; letter-spacing: .04em; }
+.photo { display: block; width: 104px; height: 104px; margin: 0 auto 14px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px var(--surface), 0 0 0 4px var(--line); }
 .masthead h1 { font-size: 26px; }
 .subtitle { margin-top: 4px; color: var(--muted); }
 .status { margin-top: 10px; font-size: 14px; color: var(--ink); }
