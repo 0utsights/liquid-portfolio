@@ -54,24 +54,26 @@ void main() {
   vec2 view = uRes / uScale;
   vec2 d = css - uPointer;
   float r2 = dot(d, d);
-  float near = exp(-r2 / (2.0 * 170.0 * 170.0)) * uPresence;
-  float halo = exp(-r2 / (2.0 * 320.0 * 320.0)) * uPresence;
+  // Cursor influence is strongest in the hero and softens once the reader is into the content.
+  float calm = mix(0.45, 1.0, uFocus);
+  float near = exp(-r2 / (2.0 * 150.0 * 150.0)) * uPresence * calm;
+  float halo = exp(-r2 / (2.0 * 280.0 * 280.0)) * uPresence * calm;
 
   // Terrain: a slowly drifting, domain-warped noise field. The cursor drags it and raises a hill.
-  vec2 world = css + vec2(0.0, uScroll * 0.45) - uVelocity * halo * 9.0;
+  vec2 world = css + vec2(0.0, uScroll * 0.45) - uVelocity * halo * 5.0;
   vec2 q = world * 0.00105;
   float t = uTime * 0.035;
   vec2 warp = vec2(snoise(q * 0.8 + vec2(t, 1.7)), snoise(q * 0.8 + vec2(4.3, -t)));
   float h = snoise(q + warp * 0.55) * 0.62 + snoise(q * 2.2 - warp * 0.35 + 9.1) * 0.24;
   h *= uIntro;
-  h += near * 0.85;
+  h += near * 0.5;
 
   for (int i = 0; i < 4; i++) {
     vec4 rp = uRipples[i];
     float age = uTime - rp.z;
     if (rp.w > 0.0 && age > 0.0 && age < 3.2) {
       float dist = length(css - rp.xy) - age * 460.0;
-      h += sin(dist * 0.045) * exp(-dist * dist / 5200.0) * 0.32 * rp.w * (1.0 - age / 3.2);
+      h += sin(dist * 0.045) * exp(-dist * dist / 5200.0) * 0.16 * rp.w * (1.0 - age / 3.2);
     }
   }
 
@@ -84,13 +86,14 @@ void main() {
   float index = step(mod(floor(v + 0.5), 5.0), 0.5);
 
   vec2 uv = css / view;
-  float side = mix(0.5, 1.0, smoothstep(0.05, 0.7, uv.x));
-  float fade = mix(0.55, 1.0, uFocus) * (1.0 - 0.35 * smoothstep(0.6, 1.1, uv.y));
-  float alpha = line * (0.12 + 0.13 * index) * side * fade + line * near * 0.6 + line * halo * 0.12;
+  // Quiet by default: faint behind the text column, nearly gone once the reader scrolls into content.
+  float side = mix(0.3, 1.0, smoothstep(0.2, 0.85, uv.x));
+  float fade = mix(0.28, 1.0, uFocus) * (1.0 - 0.45 * smoothstep(0.5, 1.1, uv.y));
+  float alpha = line * (0.06 + 0.06 * index) * side * fade + line * near * 0.3 + line * halo * 0.05;
 
   vec3 bg = vec3(0.024, 0.039, 0.075);
-  vec3 ink = mix(vec3(0.33, 0.45, 0.76), vec3(0.66, 0.78, 1.0), clamp(near * 1.4, 0.0, 1.0));
-  vec3 col = bg + ink * alpha + vec3(0.07, 0.11, 0.24) * halo * 0.22;
+  vec3 ink = mix(vec3(0.33, 0.45, 0.76), vec3(0.56, 0.68, 0.95), clamp(near * 1.4, 0.0, 1.0));
+  vec3 col = bg + ink * alpha + vec3(0.07, 0.11, 0.24) * halo * 0.1;
   col += (fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) / 255.0;
   color = vec4(col, 1.0);
 }`;
