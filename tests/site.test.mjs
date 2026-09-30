@@ -53,7 +53,8 @@ test('Both pages are complete static HTML with sharing metadata and no client ru
 
 test('Recruiter facts and every merged contribution are present and linked', async () => {
  const home = await read('index.html');
- for (const fact of ['Summer 2027', 'May 2028', '1,000+', '3,000+', 'Procentrix', '7 merged pull requests', 'one of three student groups under faculty supervision']) assert.ok(home.includes(fact), `Profile is missing ${fact}`);
+ assert.ok(!/\bpaid\b|Summer 2027/i.test(home), 'Availability is general: any term, not specifically paid');
+ for (const fact of ['winter, spring, or summer', 'Remote or in-person', 'May 2028', '1,000+', '3,000+', 'Procentrix', '7 merged pull requests', 'one of three student groups under faculty supervision']) assert.ok(home.includes(fact), `Profile is missing ${fact}`);
  assert.ok(!/sponsorship|authorized to work/i.test(home), 'Work authorization is intentionally not stated');
  const oss = await read('oss/index.html');
  const prs = ['microsoft/PowerToys/pull/49402', 'open-telemetry/opentelemetry-kotlin/pull/1064', 'NASA-AMMOS/MMGIS/pull/1029', 'pingdotgg/t3code/pull/4133', 'omnigent-ai/omnigent/pull/3661', 'unhappychoice/gittype/pull/478', 'libredb/libredb-studio/pull/904'];

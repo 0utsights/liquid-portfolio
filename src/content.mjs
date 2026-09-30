@@ -20,8 +20,8 @@ export const highlights = [
 ];
 
 export const lookingFor = [
-  'A paid software engineering internship for Summer 2027.',
-  'Northern Virginia / Washington, DC preferred; open to relocation across the U.S.',
+  'Software engineering internships for winter, spring, or summer terms.',
+  'Remote or in-person. For in-person roles, Northern Virginia / Washington, DC preferred; open to relocation across the U.S.',
 ];
 
 export const experience = [
