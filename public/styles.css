@@ -279,20 +279,23 @@ p { color: var(--text-2); text-wrap: pretty; }
 @media (prefers-reduced-motion: no-preference) {
   .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
   .js .reveal.is-in { opacity: 1; transform: none; }
-  .hero > * { animation: rise .9s var(--ease) both; }
-  .hero > :nth-child(2) { animation-delay: .08s; }
-  .hero > :nth-child(3) { animation-delay: .16s; }
-  .hero > :nth-child(4) { animation-delay: .22s; }
-  .hero > :nth-child(5) { animation-delay: .28s; }
-  .hero > :nth-child(6) { animation-delay: .34s; }
-  .metrics { animation: rise .9s .42s var(--ease) both; }
+  /* The name and pitch only slide (never fade), so they paint immediately and count as the largest paint. */
+  .hero-name, .hero-lead { animation: slide .9s var(--ease) both; }
+  .hero-lead { animation-delay: .06s; }
+  .hero > .status, .hero-sub, .hero .actions, .hero-facts { animation: rise .9s var(--ease) both; }
+  .hero-sub { animation-delay: .14s; }
+  .hero .actions { animation-delay: .2s; }
+  .hero-facts { animation-delay: .26s; }
+  .metrics { animation: rise .9s .34s var(--ease) both; }
 }
 @keyframes rise { from { opacity: 0; transform: translateY(22px); } }
+@keyframes slide { from { transform: translateY(18px); } }
 
 /* Responsive */
 @media (max-width: 64rem) {
   .pr { grid-template-columns: 7rem minmax(0, 1fr) auto; }
   .pr-detail { grid-column: 2 / -1; }
+  .pr-meta { grid-row: 1; grid-column: 3; }
   .project-card--wide { grid-template-columns: 1fr; }
   .project-card--wide .card-media { order: 0; padding: 1.25rem 1.25rem 0; }
   .project-card--wide .card-body { padding: 1.75rem; }
@@ -355,6 +358,7 @@ p { color: var(--text-2); text-wrap: pretty; }
   .chips li { background: #fff; }
   .btn-primary { background: #fff; color: #111; border-color: #111; }
   .hero { min-height: auto; padding-top: 1rem; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
   .project-card, .timeline-item, .pr, .notes article, .row { break-inside: avoid; }
   .site-footer { background: #fff; }

@@ -1,37 +1,42 @@
 <!doctype html>
 <!-- Source for public/images/social-card.jpg (1200×630) and public/apple-touch-icon.png (180×180).
-     Run `npm run build` first (the contour field is generated into dist/), then render this file at
-     1200×630 in any Chromium-based browser and save the screenshot. `#icon` renders the touch icon. -->
+     Background: pass ?bg=<image> with a 1200×630 capture of the live contour field (the site with its
+     content hidden); without it, the build-time SVG contours in dist/ are used (run `npm run build`).
+     Render at 1200×630 in a Chromium browser and save a screenshot. `#icon` renders the touch icon at 180×180. -->
 <html lang="en"><head><meta charset="utf-8"><title>Social card</title>
 <style>
 @font-face{font-family:Editorial;src:url('../public/fonts/editorial.woff2') format('woff2');font-weight:400 700}
 *{box-sizing:border-box}html,body{margin:0}
-body{width:1200px;height:630px;overflow:hidden;background:#f5f7fa;color:#142136;font-family:Arial,Helvetica,sans-serif;position:relative}
-.contours{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75;-webkit-mask-image:linear-gradient(90deg,#0000 10%,#0006 45%,#000 85%)}
-.glow{position:absolute;inset:0;background:radial-gradient(ellipse at 95% 35%,#d6e4fa99,transparent 60%)}
-.card{position:relative;height:100%;padding:72px 84px;display:flex;flex-direction:column}
-.top{display:flex;align-items:center;gap:18px;font-size:26px;margin-bottom:auto}
-.mono{display:grid;place-items:center;width:60px;height:60px;background:#142136;color:#fff;border-radius:6px;font-family:Editorial,Georgia,serif;font-size:36px}
-.eyebrow{margin:0;font-family:Consolas,'Courier New',monospace;font-size:24px;letter-spacing:.04em;color:#244ed8}
-h1{margin:14px 0 18px;font-family:Editorial,Georgia,serif;font-weight:400;font-size:132px;line-height:1;letter-spacing:-.05em}
-h1 em{font-style:normal;color:#244ed8}
-.line{font-size:32px;line-height:1.4;color:#142136}.line span{color:#526075}
-.foot{margin-top:34px;padding-top:26px;border-top:2px solid #ccd4df;display:flex;justify-content:space-between;font-size:26px;color:#244ed8;font-weight:600}
-.foot span:last-child{color:#526075;font-weight:400}
-body.icon{width:180px;height:180px;background:#142136}
+body{width:1200px;height:630px;overflow:hidden;background:#060a13 url('../dist/contours.svg') 70% 30%/cover no-repeat;color:#e9eef8;font-family:system-ui,'Segoe UI',Roboto,Arial,sans-serif;position:relative}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,#060a13f2 0%,#060a13cc 42%,#060a1300 75%)}
+.card{position:relative;height:100%;padding:64px 80px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:16px;font-size:24px;font-weight:600;margin-bottom:auto}
+.mono{display:grid;place-items:center;width:52px;height:52px;background:#e9eef8;color:#060a13;border-radius:12px;font-family:Editorial,Georgia,serif;font-size:32px}
+.status{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;padding:10px 18px;border:1px solid #2b3c5a;border-radius:999px;background:#0c1424d9;font-size:22px}
+.status i{width:11px;height:11px;border-radius:50%;background:#5ee6a8;box-shadow:0 0 0 5px #5ee6a826}
+h1{margin:22px 0 14px -4px;font-family:Editorial,Georgia,serif;font-weight:400;font-size:136px;line-height:.9;letter-spacing:-.055em}
+h1 em{font-style:normal;color:#8fb0ff}
+.line{font-size:30px;line-height:1.35;color:#aeb9cd;margin:0}
+.line b{color:#e9eef8;font-weight:500}
+.foot{display:flex;gap:28px;margin-top:30px;font:500 21px/1 ui-monospace,'Cascadia Code',Consolas,monospace;color:#8592ab}
+.foot span b{color:#5ee6a8;font-weight:600}
+body.icon{width:180px;height:180px;background:#e9eef8}
 body.icon>*:not(.icon-mark){display:none}
-.icon-mark{display:none}body.icon .icon-mark{display:grid;place-items:center;width:180px;height:180px;color:#fff;font-family:Editorial,Georgia,serif;font-size:104px;padding-bottom:10px}
+.icon-mark{display:none}body.icon .icon-mark{display:grid;place-items:center;width:180px;height:180px;color:#060a13;font-family:Editorial,Georgia,serif;font-size:104px;padding-bottom:10px}
 </style></head>
 <body>
-<img class="contours" src="../dist/contours.svg" alt="">
-<div class="glow"></div>
+<div class="shade"></div>
 <div class="card">
  <div class="top"><span class="mono">js.</span><span>John Surles</span></div>
- <p class="eyebrow">Software engineering / Backend &amp; full-stack</p>
- <h1>John <em>Surles</em><em>.</em></h1>
- <p class="line">B.S. Computer Science · Virginia Tech <span>· Expected May 2028</span></p>
- <div class="foot"><span>Seeking Summer 2027 software engineering internships</span><span>johnsurles.com</span></div>
+ <p class="status"><i></i>Open to Summer 2027 software engineering internships</p>
+ <h1>John Surles<em>.</em></h1>
+ <p class="line"><b>Backend &amp; full-stack.</b> Computer Science · Virginia Tech · May 2028</p>
+ <div class="foot"><span><b>1,000+</b> users</span><span><b>3,000+</b> downloads</span><span><b>5</b> merged PRs</span><span>johnsurles.com</span></div>
 </div>
 <div class="icon-mark">js.</div>
-<script>if (location.hash === '#icon') document.body.className = 'icon';</script>
+<script>
+const bg = new URLSearchParams(location.search).get('bg');
+if (bg) document.body.style.backgroundImage = `url('${bg}')`, document.body.style.backgroundSize = 'cover';
+if (location.hash === '#icon') document.body.className = 'icon';
+</script>
 </body></html>
