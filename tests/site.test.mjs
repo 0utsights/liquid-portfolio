@@ -38,7 +38,9 @@ test('Pages carry usable content, unique titles, canonical URLs, and a single ma
   assert.match(html,/<meta name="description" content="[^"]{30,}"/);
   const title=html.match(/<title>(.*?)<\/title>/)[1];assert.ok(!titles.has(title));titles.add(title);
   assert.ok(!html.includes('href="#"'));
-  assert.ok(!/<script\b|<canvas\b/.test(html), 'Recruiter pages must not require a client runtime');
+  assert.ok(!/<script\b(?! type="application\/ld\+json")|<canvas\b/.test(html), 'Recruiter pages must not require a client runtime');
+  assert.match(html,/<meta property="og:image" content="https:\/\/johnsurles.com\/images\/social-card.jpg">/);
+  for(const m of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g))JSON.parse(m[1]);
   assert.ok(!/lorem ipsum|TODO|placeholder/i.test(html));
   assert.equal([...html.matchAll(/aria-current="page"/g)].length,1);
  }

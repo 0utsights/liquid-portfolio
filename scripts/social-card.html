@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- Source for public/images/social-card.jpg (1200×630) and public/apple-touch-icon.png (180×180).
+     Run `npm run build` first (the contour field is generated into dist/), then render this file at
+     1200×630 in any Chromium-based browser and save the screenshot. `#icon` renders the touch icon. -->
+<html lang="en"><head><meta charset="utf-8"><title>Social card</title>
+<style>
+@font-face{font-family:Editorial;src:url('../public/fonts/editorial.woff2') format('woff2');font-weight:400 700}
+*{box-sizing:border-box}html,body{margin:0}
+body{width:1200px;height:630px;overflow:hidden;background:#f5f7fa;color:#142136;font-family:Arial,Helvetica,sans-serif;position:relative}
+.contours{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75;-webkit-mask-image:linear-gradient(90deg,#0000 10%,#0006 45%,#000 85%)}
+.glow{position:absolute;inset:0;background:radial-gradient(ellipse at 95% 35%,#d6e4fa99,transparent 60%)}
+.card{position:relative;height:100%;padding:72px 84px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:18px;font-size:26px;margin-bottom:auto}
+.mono{display:grid;place-items:center;width:60px;height:60px;background:#142136;color:#fff;border-radius:6px;font-family:Editorial,Georgia,serif;font-size:36px}
+.eyebrow{margin:0;font-family:Consolas,'Courier New',monospace;font-size:24px;letter-spacing:.04em;color:#244ed8}
+h1{margin:14px 0 18px;font-family:Editorial,Georgia,serif;font-weight:400;font-size:132px;line-height:1;letter-spacing:-.05em}
+h1 em{font-style:normal;color:#244ed8}
+.line{font-size:32px;line-height:1.4;color:#142136}.line span{color:#526075}
+.foot{margin-top:34px;padding-top:26px;border-top:2px solid #ccd4df;display:flex;justify-content:space-between;font-size:26px;color:#244ed8;font-weight:600}
+.foot span:last-child{color:#526075;font-weight:400}
+body.icon{width:180px;height:180px;background:#142136}
+body.icon>*:not(.icon-mark){display:none}
+.icon-mark{display:none}body.icon .icon-mark{display:grid;place-items:center;width:180px;height:180px;color:#fff;font-family:Editorial,Georgia,serif;font-size:104px;padding-bottom:10px}
+</style></head>
+<body>
+<img class="contours" src="../dist/contours.svg" alt="">
+<div class="glow"></div>
+<div class="card">
+ <div class="top"><span class="mono">js.</span><span>John Surles</span></div>
+ <p class="eyebrow">Software engineering / Backend &amp; full-stack</p>
+ <h1>John <em>Surles</em><em>.</em></h1>
+ <p class="line">B.S. Computer Science · Virginia Tech <span>· Expected May 2028</span></p>
+ <div class="foot"><span>Seeking Summer 2027 software engineering internships</span><span>johnsurles.com</span></div>
+</div>
+<div class="icon-mark">js.</div>
+<script>if (location.hash === '#icon') document.body.className = 'icon';</script>
+</body></html>
