@@ -1,29 +1,29 @@
 export const projects = [
   {
-    slug: 'deepwoken-trade', number: '01', title: 'Deepwoken.trade', category: 'Backend & production infrastructure', date: 'June 2026 — Present',
-    summary: 'Built and deployed a trading marketplace serving 1,000+ users, connecting account verification, trade requests, and reputation with PostgreSQL persistence.',
+    slug: 'deepwoken-trade', number: '01', title: 'Deepwoken.trade', category: 'Backend & production infrastructure', date: 'June 2026–Present',
+    summary: 'Built and deployed a trading marketplace for players of the Roblox game Deepwoken, serving 1,000+ users. It connects account verification, trade requests, and reputation with PostgreSQL persistence.',
     stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Docker'],
     contribution: ['Built trade listings, item markets, reputation profiles, and trade requests.', 'Added Discord OAuth, Roblox verification, and PostgreSQL persistence through Prisma.', 'Deployed with Docker, AWS, Terraform, and GitHub Actions; later migrated to Oracle Cloud and Supabase PostgreSQL.'],
     links: [['Live site', 'https://deepwoken.trade']],
     sourceNote: 'Source code is private.',
   },
   {
-    slug: 'aeyori', number: '02', title: 'Aeyori / KarutaBot', category: 'Python workflows & application development', date: 'March 2026 — Present',
-    summary: 'Built an open-source Python client that coordinates card-image OCR and scheduled workflows for Karuta, with configurable profiles, cooldown handling, and activity logs.',
+    slug: 'aeyori', number: '02', title: 'Aeyori / KarutaBot', category: 'Python workflows & application development', date: 'March 2026–Present',
+    summary: 'Built an open-source Python client for the Discord card game Karuta that coordinates card-image OCR and scheduled workflows, with configurable profiles, cooldown handling, and activity logs.',
     stack: ['Python', 'FastAPI', 'EasyOCR', 'Selenium', 'PostgreSQL'],
     contribution: ['Built the OCR pipeline with Python, EasyOCR, and Selenium.', 'Built a FastAPI backend and dashboard with authentication and license-key management for an earlier hosted version.', 'Worked with contributors to improve recognition reliability and processing options.'],
-    links: [['Code on GitHub', 'https://github.com/0utsights/KarutaBot']],
+    links: [['Code on GitHub', 'https://github.com/0utsights/KarutaBot'], ['Project website', 'https://aeyori.com']],
   },
   {
-    slug: 'opsdeck', number: '04', title: 'OpsDeck', category: 'Systems & developer tooling', date: 'August 2026 — Present', archived: true,
+    slug: 'opsdeck', number: '04', title: 'OpsDeck', category: 'Systems & developer tooling', date: 'August 2026–Present', archived: true,
     summary: 'Built a Go dashboard and SSH metrics probe for Linux servers, with Docker health checks, live container placement, and explicit handling of stale agent heartbeats.',
     stack: ['Go', 'Linux', 'SSH', 'Docker'],
     contribution: ['Built local and SSH-based probes for CPU, memory, disk, network, and container health.', 'Derived site placement and migration states from live Docker observations rather than maintaining a second placement database.', 'Used file-based agent heartbeats with explicit stale-state handling; kept the dashboard independent of any particular AI framework.'],
     links: [['Code on GitHub', 'https://github.com/0utsights/opsdeck']],
   },
   {
-    slug: 'legendwatch', number: '03', title: 'LegendWatch', category: 'Event-driven software · Java', date: 'March 2026 — Present',
-    summary: 'Built a Java/Fabric mod that turns public game events into match and item state, with 2,000+ downloads across Modrinth and CurseForge.',
+    slug: 'legendwatch', number: '03', title: 'LegendWatch', category: 'Event-driven software · Java', date: 'March 2026–Present',
+    summary: 'Built a Java/Fabric Minecraft mod for the Hoplite server that turns public chat events into match state and shows which players hold legendary items. 2,000+ downloads across Modrinth and CurseForge.',
     stack: ['Java', 'Fabric API', 'Gradle'],
     contribution: ['Built the client-side mod in Java with the Fabric API.', 'Parsed public events, maintained match state, and rendered item-tracking indicators.', 'Published the mod on GitHub, Modrinth, and CurseForge.'],
     links: [['Code on GitHub', 'https://github.com/0utsights/LegendWatch'], ['Modrinth', 'https://modrinth.com/mod/legendwatch'], ['CurseForge', 'https://www.curseforge.com/minecraft/mc-mods/legendwatch']],
@@ -69,9 +69,10 @@ export const engineeringNotes = {
 };
 
 export const contributions = [
-  {name:'Microsoft PowerToys', repo:'microsoft/PowerToys', number:'49402', detail:'Fixed Quick Accent sizing and character clipping at fractional display scaling.', tech:'C# / WinUI'},
-  {name:'NASA-AMMOS / MMGIS', repo:'NASA-AMMOS/MMGIS', number:'1029', detail:'Preserved development startup logs by removing a terminal clear; added regression tests.', tech:'Developer tooling'},
-  {name:'GitType', repo:'unhappychoice/gittype', number:'478', detail:'Fixed redraws after terminal resizing; added regression tests.', tech:'Rust / TUI'},
-  {name:'T3 Code', repo:'pingdotgg/t3code', number:'4133', detail:'Fixed HTML/XML-like user message rendering while retaining assistant sanitization; added tests.', tech:'Message rendering'},
-  {name:'Omnigent', repo:'omnigent-ai/omnigent', number:'3661', detail:'Added RS384, RS512, ES384, and ES512 signing algorithm support with regression tests.', tech:'Authentication / OIDC'},
+  // Merge months come from each pull request's merged_at date on GitHub.
+  {name:'Microsoft PowerToys', repo:'microsoft/PowerToys', number:'49402', merged:'July 2026', detail:'Fixed Quick Accent sizing and character clipping at fractional display scaling.', tech:'C# / WinUI'},
+  {name:'NASA-AMMOS / MMGIS', repo:'NASA-AMMOS/MMGIS', number:'1029', merged:'August 2026', detail:'Preserved development startup logs by removing a terminal clear; added regression tests.', tech:'Developer tooling'},
+  {name:'GitType', repo:'unhappychoice/gittype', number:'478', merged:'August 2026', detail:'Fixed redraws after terminal resizing; added regression tests.', tech:'Rust / TUI'},
+  {name:'T3 Code', repo:'pingdotgg/t3code', number:'4133', merged:'August 2026', detail:'Fixed HTML/XML-like user message rendering while retaining assistant sanitization; added tests.', tech:'Message rendering'},
+  {name:'Omnigent', repo:'omnigent-ai/omnigent', number:'3661', merged:'August 2026', detail:'Added RS384, RS512, ES384, and ES512 signing algorithm support with regression tests.', tech:'Authentication / OIDC'},
 ];
