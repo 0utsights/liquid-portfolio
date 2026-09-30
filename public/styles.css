@@ -47,7 +47,7 @@ body { isolation: isolate; }
 .hero-contact { padding: 1.75rem; background: var(--surface); border: 1px solid var(--surface-rule); border-radius: 8px; box-shadow: 0 1px 2px #1421360a, 0 16px 40px -24px #14213640; }
 @media (max-width: 60rem) { .hero-contact { padding: 1.5rem; } }
 @media (max-width: 44rem) { .hero-contact { padding: 1.25rem; border: 1px solid var(--surface-rule); } }
-@media print { .hero-contact { box-shadow: none; padding: 0; border: 0; } }
+@media print { .hero-contact { box-shadow: none; padding: 0; border: 0; } .system-map { background: #fff; background-image: none; border-color: #ccd4df; } .system-map li { border-left-color: #244ed8; } .system-map li + li:before { border-left-color: #8a9ab3; } }
 
 /* Interaction details: direction cues, new-tab cues, and a smooth disclosure icon. */
 .text-link[target=_blank]::after, .pr-link[target=_blank]::after { content: "↗" / ""; margin-left: .3em; font-size: .8em; line-height: 1; color: var(--muted); }

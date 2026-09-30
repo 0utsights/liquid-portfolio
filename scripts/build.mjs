@@ -93,7 +93,7 @@ for (const route of routes) {
 }
 // Preserve the old personal route without perpetuating outdated personal copy.
 await mkdir(join(output,'personal'),{recursive:true});
-await writeFile(join(output,'personal/index.html'),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/about/"><link rel="canonical" href="https://johnsurles.com/about/"><title>About — John Surles</title></head><body><a href="/about/">Continue to About John Surles</a></body></html>`);
+await writeFile(join(output,'personal/index.html'),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/about/"><link rel="canonical" href="https://johnsurles.com/about/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><title>About — John Surles</title></head><body><a href="/about/">Continue to About John Surles</a></body></html>`);
 await writeFile(join(output,'404.html'),page({path:'/404.html',key:'not-found',title:'Page not found — John Surles',description:'This page could not be found.',body:'<section class="page-intro"><p class="eyebrow">404</p><h1>Page not found</h1><p>This page isn’t available.</p><div class="inline-links"><a class="button" href="/">Return home</a><a class="text-link" href="/work/">View work</a></div></section>'}));
 await writeFile(join(output,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://johnsurles.com/sitemap.xml\n');
 await writeFile(join(output,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(r=>`<url><loc>https://johnsurles.com${r.path}</loc></url>`).join('')}</urlset>`);
