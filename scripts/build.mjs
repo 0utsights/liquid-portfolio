@@ -19,21 +19,27 @@ const esc = s => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').repl
 const ext = (label, href) => `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}<span class="sr-only"> (opens in a new tab)</span></a>`;
 const card = (id, heading, body) => `<section class="card"${id ? ` id="${id}"` : ''} aria-labelledby="${id || heading.toLowerCase().replace(/\W+/g, '-')}-title"><h2 id="${id || heading.toLowerCase().replace(/\W+/g, '-')}-title">${heading}</h2><div class="card-body">${body}</div></section>`;
 const list = items => `<ul>${items.map(x => `<li>${x}</li>`).join('')}</ul>`;
+const words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+const count = contributions.length;
+const fill = text => text.replace('{count}', count).replace('{others}', words[count - 3] ?? count - 3);
+const series = items => items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')}, and ${items.at(-1)}`;
+const codePRs = contributions.filter(c => !c.docs);
+const docPRs = contributions.length - codePRs.length;
+const languages = [...new Set(codePRs.map(c => c.lang.split(' /')[0]))];
 
 const profilePage = [
- card('about', 'About', `<p>${about}</p><ul class="highlights">${highlights.map(([text, href]) => `<li><a href="${href}">${text}</a></li>`).join('')}</ul>`),
+ card('about', 'About', `<p>${about}</p><ul class="highlights">${highlights.map(([text, href]) => `<li><a href="${href}">${fill(text)}</a></li>`).join('')}</ul>`),
  card('looking-for', 'Looking for', list(lookingFor)),
  card('experience', 'Experience', experience.map(e => `<article class="entry" id="${e.id}"><div class="entry-head"><h3>${e.role}</h3><p class="entry-date">${e.date}</p></div><p class="entry-org">${e.org}</p>${list(e.points)}</article>`).join('')),
- card('open-source-summary', 'Open source', `<p>${contributions.length} pull requests merged into projects maintained by others, including Microsoft PowerToys and NASA-AMMOS MMGIS. <a href="/oss/">See each contribution</a>: what broke, what I changed, and how it was verified.</p>`),
+ card('open-source-summary', 'Open source', `<p>${count} pull requests merged into projects maintained by others, including Microsoft PowerToys, OpenTelemetry, and NASA-AMMOS MMGIS. <a href="/oss/">See each contribution</a>: what broke, what I changed, and how it was verified.</p>`),
  card('projects', 'Projects', projects.map(p => `<article class="entry" id="${p.id}"><div class="entry-head"><h3>${p.name}</h3><p class="entry-date">${p.date}</p></div><p>${p.summary}</p>${list(p.points)}<p class="meta">${p.stack}</p><p class="entry-links">${p.links.map(([l, h]) => ext(l, h)).join('')}${p.note ? `<span class="meta">${p.note}</span>` : ''}</p></article>`).join('')),
  card('education', 'Education', education.map(e => `<div class="entry entry-compact"><div class="entry-head"><h3>${e.school}</h3><p class="entry-date">${e.date}</p></div><p class="entry-org">${e.detail}</p></div>`).join('')),
  card('skills', 'Skills', `<p class="meta">Each skill links to where I’ve used it.</p><ul class="skills">${skills.map(([k, used]) => `<li><strong>${k}</strong><span>${used.map(([l, h]) => `<a href="${h}">${l}</a>`).join(', ')}</span></li>`).join('')}</ul><p class="meta">Also: ${alsoFamiliar}.</p>`),
  card('links', 'Links', `<ul class="link-list"><li><a href="${mail}">${profile.email}</a></li><li><a href="${profile.phoneHref}">${profile.phone}</a></li><li><a href="${resume}">Resume (PDF)</a></li><li>${ext('GitHub', profile.github)}</li><li>${ext('LinkedIn', profile.linkedin)}</li></ul>`),
 ].join('');
 
-const languages = [...new Set(contributions.map(c => c.lang.split(' /')[0]))];
 const ossPage = [
- card('contributions', 'Contributions', `<p>${contributions.length} merged pull requests to projects I don’t maintain, in ${languages.join(', ').replace(/, ([^,]*)$/, ', and $1')}. Each one fixes a reproducible bug or a reported issue, and every entry links to the PR on GitHub.</p>`),
+ card('contributions', 'Contributions', `<p>${count} merged pull requests to projects I don’t maintain: ${words[codePRs.length] ?? codePRs.length} code fixes (${languages.join(', ')})${docPRs ? ` and ${words[docPRs] ?? docPRs} documentation fix${docPRs > 1 ? 'es' : ''}` : ''}. Each one fixes a reproducible bug or a reported issue, and every entry links to the PR on GitHub.</p>`),
  card('merged', 'Merged pull requests', contributions.map(c => `<article class="entry pr" id="${c.repo.split('/')[1].toLowerCase()}"><p class="pr-repo"><strong>${c.repo}</strong> · ${c.about}</p><h3>${ext(`${esc(c.title)} <span class="pr-number">#${c.number}</span>`, `https://github.com/${c.repo}/pull/${c.number}`)}</h3><p class="meta">Merged ${c.merged} · ${c.lang} · ${c.diff}${c.issue ? ` · Fixes ${ext(`#${c.issue}`, `https://github.com/${c.repo}/issues/${c.issue}`)}` : ''}</p><dl class="pr-detail"><dt>Problem</dt><dd>${esc(c.problem)}</dd><dt>Change</dt><dd>${esc(c.fix)}</dd><dt>Verified</dt><dd>${esc(c.verified)}</dd></dl></article>`).join('')),
  card('own-projects', 'My open-source projects', `<ul class="link-list">${projects.filter(p => p.links.some(([l]) => l === 'GitHub')).map(p => `<li>${ext(p.name, p.links.find(([l]) => l === 'GitHub')[1])} <span class="meta">— ${p.summary}</span></li>`).join('')}</ul>`),
 ].join('');
@@ -48,7 +54,7 @@ const profileData = {
 
 const routes = [
  {path: '/', key: 'profile', title: 'John Surles — Software Engineering Student', description: 'Virginia Tech CS student (May 2028) seeking paid Summer 2027 SWE internships in Northern Virginia / Washington, DC; open to U.S. relocation.', body: profilePage},
- {path: '/oss/', key: 'oss', title: 'Open Source — John Surles', description: 'Five merged pull requests to Microsoft PowerToys, NASA-AMMOS MMGIS, T3 Code, Omnigent, and GitType: the problem, the change, and how each was verified.', body: ossPage},
+ {path: '/oss/', key: 'oss', title: 'Open Source — John Surles', description: `${count} merged pull requests to Microsoft PowerToys, OpenTelemetry, NASA-AMMOS MMGIS, and ${count - 3} other projects: the problem, the change, and how each was verified.`, body: ossPage},
 ];
 
 function page(route) {

@@ -50,10 +50,12 @@ test('Both pages are complete static HTML with sharing metadata and no client ru
 
 test('Recruiter facts and every merged contribution are present and linked', async () => {
  const home = await read('index.html');
- for (const fact of ['Summer 2027', 'May 2028', '1,000+', '3,000+', 'Procentrix', 'No sponsorship required', 'one of three student groups under faculty supervision']) assert.ok(home.includes(fact), `Profile is missing ${fact}`);
+ for (const fact of ['Summer 2027', 'May 2028', '1,000+', '3,000+', 'Procentrix', '7 merged pull requests', 'one of three student groups under faculty supervision']) assert.ok(home.includes(fact), `Profile is missing ${fact}`);
+ assert.ok(!/sponsorship|authorized to work/i.test(home), 'Work authorization is intentionally not stated');
  const oss = await read('oss/index.html');
- for (const pr of ['microsoft/PowerToys/pull/49402', 'NASA-AMMOS/MMGIS/pull/1029', 'unhappychoice/gittype/pull/478', 'pingdotgg/t3code/pull/4133', 'omnigent-ai/omnigent/pull/3661']) assert.ok(oss.includes(`https://github.com/${pr}`), `Missing ${pr}`);
- assert.equal([...oss.matchAll(/<dt>Verified<\/dt>/g)].length, 5);
+ const prs = ['microsoft/PowerToys/pull/49402', 'open-telemetry/opentelemetry-kotlin/pull/1064', 'NASA-AMMOS/MMGIS/pull/1029', 'pingdotgg/t3code/pull/4133', 'omnigent-ai/omnigent/pull/3661', 'unhappychoice/gittype/pull/478', 'libredb/libredb-studio/pull/904'];
+ for (const pr of prs) assert.ok(oss.includes(`https://github.com/${pr}`), `Missing ${pr}`);
+ assert.equal([...oss.matchAll(/<dt>Verified<\/dt>/g)].length, prs.length);
  assert.ok(!/stars?\b|★/i.test(oss), 'Contributions are judged by the change, not the host repository’s stars');
  assert.ok(!home.includes('github.com/0utsights/issue-proof'), 'Issue Proof is private');
  const pdf = await readFile(join(dist, 'John-Surles-Resume.pdf')); assert.equal(pdf.subarray(0, 4).toString(), '%PDF');

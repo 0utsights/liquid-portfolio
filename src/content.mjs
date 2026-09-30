@@ -14,14 +14,14 @@ export const about = 'I’m a Computer Science student at Virginia Tech, graduat
 // First-screen proof points; each links to its evidence further down.
 export const highlights = [
   ['Software engineering intern at Procentrix, summer 2026', '/#procentrix'],
-  ['5 merged pull requests to Microsoft PowerToys, NASA-AMMOS MMGIS, and three other projects', '/oss/'],
+  // {count} and {others} are filled in from the contributions list at build time.
+  ['{count} merged pull requests to Microsoft PowerToys, OpenTelemetry, NASA-AMMOS MMGIS, and {others} other projects', '/oss/'],
   ['Built Deepwoken.trade (1,000+ users) and LegendWatch (3,000+ downloads)', '/#projects'],
 ];
 
 export const lookingFor = [
   'A paid software engineering internship for Summer 2027.',
   'Northern Virginia / Washington, DC preferred; open to relocation across the U.S.',
-  'Authorized to work in the U.S. No sponsorship required, now or in the future.',
 ];
 
 export const experience = [
@@ -97,6 +97,14 @@ export const contributions = [
     verified: 'Runtime-tested at 150% and 175% scaling. The PR explains why a unit test duplicating the XAML dimensions would not catch this regression.',
   },
   {
+    repo: 'open-telemetry/opentelemetry-kotlin', about: 'OpenTelemetry for Kotlin Multiplatform (CNCF)', number: 1064,
+    title: 'Fix concurrent span mutation during OnEnding', merged: 'September 18, 2026', lang: 'Kotlin',
+    diff: '+119 −26 in 2 files', issue: 1059,
+    problem: 'While a span was in its OnEnding callback, another thread could overwrite span data before it was exported.',
+    fix: 'Restricted mutations in the ENDING state to the callback thread using the library’s multiplatform ThreadLocal, initialized lazily and kept outside the write lock to avoid deadlocks.',
+    verified: 'Reproduced the cross-thread overwrite first. After a revision for maintainer review, five cross-thread tests and the JVM (563) and JS (548) test suites pass.',
+  },
+  {
     repo: 'NASA-AMMOS/MMGIS', about: 'NASA-AMMOS web mapping system for planetary science', number: 1029,
     title: 'fix: preserve development startup logs in terminal scrollback', merged: 'August 5, 2026', lang: 'JavaScript',
     diff: '+32 −7 in 4 files', issue: 144,
@@ -128,6 +136,14 @@ export const contributions = [
     fix: 'Separated terminal event dispatch from key handling and redraw on resize events.',
     verified: 'Regression tests for resize and keypress redraws using a render-counting test backend; the full suite (2,769 tests) passes.',
   },
+  {
+    repo: 'libredb/libredb-studio', about: 'Open-source browser SQL IDE', number: 904, docs: true,
+    title: 'docs: fix Keycloak ID-token role mapping setup', merged: 'September 16, 2026', lang: 'Documentation · OIDC',
+    diff: '+5 −1 in 1 file', issue: 850,
+    problem: 'The Keycloak setup guide left realm roles out of the ID token, so administrators signed in with the ordinary user role.',
+    fix: 'Documented the required “Add to ID token” mapper setting and made it the first troubleshooting check for a missing admin role.',
+    verified: 'Reproduced against a local Keycloak 26.4 server, then confirmed admin and user accounts mapped correctly through PKCE logins; the full test suite (17,537 tests) passes.',
+  },
 ];
 
 export const education = [
@@ -142,7 +158,7 @@ export const skills = [
   ['Java', [['LegendWatch', '/#legendwatch']]],
   ['Go', [['OpsDeck', '/#opsdeck']]],
   ['SQL & PostgreSQL', [['Procentrix (SQL Server)', '/#procentrix'], ['Deepwoken.trade', '/#deepwoken-trade']]],
-  ['C#, Rust, JavaScript', [['PowerToys PR', '/oss/#powertoys'], ['GitType PR', '/oss/#gittype'], ['MMGIS PR', '/oss/#mmgis']]],
+  ['Kotlin, C#, Rust, JavaScript', [['OpenTelemetry PR', '/oss/#opentelemetry-kotlin'], ['PowerToys PR', '/oss/#powertoys'], ['GitType PR', '/oss/#gittype'], ['MMGIS PR', '/oss/#mmgis']]],
   ['React, Next.js, Node.js, FastAPI', [['Procentrix', '/#procentrix'], ['Deepwoken.trade', '/#deepwoken-trade'], ['Aeyori', '/#aeyori']]],
   ['Docker, Terraform, AWS, Linux', [['Deepwoken.trade', '/#deepwoken-trade'], ['OpsDeck', '/#opsdeck']]],
 ];
