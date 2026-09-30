@@ -18,7 +18,9 @@ const mail = `mailto:${profile.email}`;
 const esc = s => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const ext = (label, href) => `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}<span class="sr-only"> (opens in a new tab)</span></a>`;
 const card = (id, heading, body) => `<section class="card"${id ? ` id="${id}"` : ''} aria-labelledby="${id || heading.toLowerCase().replace(/\W+/g, '-')}-title"><h2 id="${id || heading.toLowerCase().replace(/\W+/g, '-')}-title">${heading}</h2><div class="card-body">${body}</div></section>`;
-const list = items => `<ul>${items.map(x => `<li>${x}</li>`).join('')}</ul>`;
+// **text** in content becomes <strong>, resume-style emphasis on the key phrase of a line.
+const md = s => String(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+const list = items => `<ul>${items.map(x => `<li>${md(x)}</li>`).join('')}</ul>`;
 // Contact links get a copy button; it stays hidden unless /copy.js runs, so the link alone still works.
 const copyIcon = '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="5.5" y="5.5" width="8.5" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 5.5V3.5A1.5 1.5 0 0 0 9 2H3.5A1.5 1.5 0 0 0 2 3.5V9a1.5 1.5 0 0 0 1.5 1.5h2" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>';
 const copyable = (link, value, what) => `<span class="copyable">${link}<button type="button" class="copy" data-copy="${value}" aria-label="Copy ${what}" title="Copy ${what}" hidden>${copyIcon}</button></span>`;
@@ -36,11 +38,11 @@ const docPRs = contributions.length - codePRs.length;
 const languages = [...new Set(codePRs.map(c => c.lang.split(' /')[0]))];
 
 const profilePage = [
- card('about', 'About', `<p>${about}</p><ul class="highlights">${highlights.map(([text, href]) => `<li><a href="${href}">${fill(text)}</a></li>`).join('')}</ul>`),
+ card('about', 'About', `<p>${md(about)}</p><ul class="highlights">${highlights.map(([text, href]) => `<li><a href="${href}">${md(fill(text))}</a></li>`).join('')}</ul>`),
  card('looking-for', 'Looking for', list(lookingFor)),
  card('experience', 'Experience', experience.map(e => `<article class="entry" id="${e.id}"><div class="entry-head"><h3>${e.role}</h3><p class="entry-date">${e.date}</p></div><p class="entry-org">${e.org}</p>${list(e.points)}</article>`).join('')),
  card('open-source-summary', 'Open source', `<p>${count} pull requests merged into projects maintained by others, including Microsoft PowerToys, OpenTelemetry, and NASA-AMMOS MMGIS. <a href="/oss/">See each contribution</a>: what broke, what I changed, and how it was verified.</p>`),
- card('projects', 'Projects', projects.map(p => `<article class="entry" id="${p.id}"><div class="entry-head"><h3>${p.name}</h3><p class="entry-date">${p.date}</p></div><p>${p.summary}</p>${list(p.points)}<p class="meta">${p.stack}</p><p class="entry-links">${p.links.map(([l, h]) => ext(l, h)).join('')}${p.note ? `<span class="meta">${p.note}</span>` : ''}</p></article>`).join('')),
+ card('projects', 'Projects', projects.map(p => `<article class="entry" id="${p.id}"><div class="entry-head"><h3>${p.name}</h3><p class="entry-date">${p.date}</p></div><p>${md(p.summary)}</p>${list(p.points)}<p class="meta">${p.stack}</p><p class="entry-links">${p.links.map(([l, h]) => ext(l, h)).join('')}${p.note ? `<span class="meta">${p.note}</span>` : ''}</p></article>`).join('')),
  card('education', 'Education', education.map(e => `<div class="entry entry-compact"><div class="entry-head"><h3>${e.school}</h3><p class="entry-date">${e.date}</p></div><p class="entry-org">${e.detail}</p></div>`).join('')),
  card('skills', 'Skills', `<p class="meta">Each skill links to where I’ve used it.</p><ul class="skills">${skills.map(([k, used]) => `<li><strong>${k}</strong><span>${used.map(([l, h]) => `<a href="${h}">${l}</a>`).join(', ')}</span></li>`).join('')}</ul><p class="meta">Also: ${alsoFamiliar}.</p>`),
  card('links', 'Links', `<ul class="link-list"><li>${contacts.email(profile.email)}</li><li>${contacts.github(profile.github.replace('https://', ''))}</li><li>${contacts.linkedin(profile.linkedin.replace('https://www.', '').replace(/\/$/, ''))}</li><li><a href="${profile.phoneHref}">${profile.phone}</a></li><li><a href="${resume}">Resume (PDF)</a></li></ul>`),
@@ -48,8 +50,8 @@ const profilePage = [
 
 const ossPage = [
  card('contributions', 'Contributions', `<p>${count} merged pull requests to projects I don’t maintain: ${words[codePRs.length] ?? codePRs.length} code fixes (${languages.join(', ')})${docPRs ? ` and ${words[docPRs] ?? docPRs} documentation fix${docPRs > 1 ? 'es' : ''}` : ''}. Each one fixes a reproducible bug or a reported issue, and every entry links to the PR on GitHub.</p>`),
- card('merged', 'Merged pull requests', contributions.map(c => `<article class="entry pr" id="${c.repo.split('/')[1].toLowerCase()}"><p class="pr-repo"><strong>${c.repo}</strong> · ${c.about}</p><h3>${ext(`${esc(c.title)} <span class="pr-number">#${c.number}</span>`, `https://github.com/${c.repo}/pull/${c.number}`)}</h3><p class="meta">Merged ${c.merged} · ${c.lang} · ${c.diff}${c.issue ? ` · Fixes ${ext(`#${c.issue}`, `https://github.com/${c.repo}/issues/${c.issue}`)}` : ''}</p><dl class="pr-detail"><dt>Problem</dt><dd>${esc(c.problem)}</dd><dt>Change</dt><dd>${esc(c.fix)}</dd><dt>Verified</dt><dd>${esc(c.verified)}</dd></dl></article>`).join('')),
- card('own-projects', 'My open-source projects', `<ul class="link-list">${projects.filter(p => p.links.some(([l]) => l === 'GitHub')).map(p => `<li>${ext(p.name, p.links.find(([l]) => l === 'GitHub')[1])} <span class="meta">— ${p.summary}</span></li>`).join('')}</ul>`),
+ card('merged', 'Merged pull requests', contributions.map(c => `<article class="entry pr" id="${c.repo.split('/')[1].toLowerCase()}"><p class="pr-repo"><strong>${c.repo}</strong> · ${c.about}</p><h3>${ext(`${esc(c.title)} <span class="pr-number">#${c.number}</span>`, `https://github.com/${c.repo}/pull/${c.number}`)}</h3><p class="meta">Merged ${c.merged} · ${c.lang} · ${c.diff}${c.issue ? ` · Fixes ${ext(`#${c.issue}`, `https://github.com/${c.repo}/issues/${c.issue}`)}` : ''}</p><dl class="pr-detail"><dt>Problem</dt><dd>${md(esc(c.problem))}</dd><dt>Change</dt><dd>${md(esc(c.fix))}</dd><dt>Verified</dt><dd>${md(esc(c.verified))}</dd></dl></article>`).join('')),
+ card('own-projects', 'My open-source projects', `<ul class="link-list">${projects.filter(p => p.links.some(([l]) => l === 'GitHub')).map(p => `<li>${ext(p.name, p.links.find(([l]) => l === 'GitHub')[1])} <span class="meta">— ${md(p.summary)}</span></li>`).join('')}</ul>`),
 ].join('');
 
 // Structured identity for search engines; every value is also stated on the page.
