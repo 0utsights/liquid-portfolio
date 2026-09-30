@@ -1,7 +1,7 @@
 // Every fact here comes from the resume, project READMEs, GitHub's API, Modrinth, or John directly.
 export const profile = {
   name: 'John Surles',
-  title: 'Software Engineering Student · Virginia Tech',
+  title: 'Computer Science Student · Virginia Tech',
   email: 'surlesjohn@outlook.com',
   phone: '(727) 331-0916',
   phoneHref: 'tel:+17273310916',
