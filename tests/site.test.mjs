@@ -14,7 +14,7 @@ test('Every generated internal link, anchor, and asset has a destination', async
  assert.equal(htmlFiles.length,10);
  for(const file of htmlFiles){
   const html=await readFile(file,'utf8');
-  const paths=[...html.matchAll(/(?:href|src)="([^"]+)"/g)].map(m=>m[1]);
+  const paths=[...html.matchAll(/(?:href|src|srcset)="([^"]+)"/g)].map(m=>m[1]);
   for(const href of paths){
    if(!href.startsWith('/')&&!href.startsWith('#'))continue;
    const url=new URL(href,'https://johnsurles.com'+file.slice(dist.length).replaceAll('\\','/').replace(/index\.html$/,''));

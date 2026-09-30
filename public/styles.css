@@ -57,4 +57,5 @@ body { isolation: isolate; }
 .engineering-note summary span { transition: transform 180ms ease; }
 .engineering-note summary:hover { color: var(--accent-hover); }
 .project-preview a:focus-visible { outline-offset: 3px; }
+.project-preview picture { display: block; }
 @media screen and (prefers-color-scheme: dark) { .ambient-contours { opacity: .7; } .project-preview a { border-color: var(--surface-rule); } .hero-contact { box-shadow: none; } }
