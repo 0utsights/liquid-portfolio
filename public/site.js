@@ -78,7 +78,9 @@ void main() {
   // Contour lines: about one canvas pixel wide at any resolution; every fifth line is an index line.
   float v = h * 11.0;
   float band = abs(fract(v) - 0.5);
-  float line = 1.0 - smoothstep(0.45, 1.35, band / max(fwidth(v), 1e-4));
+  float fw = max(fwidth(v), 1e-4);
+  // Fade lines packed tighter than about two pixels apart, which would otherwise alias into speckle.
+  float line = (1.0 - smoothstep(0.45, 1.35, band / fw)) * (1.0 - smoothstep(0.3, 0.6, fw));
   float index = step(mod(floor(v + 0.5), 5.0), 0.5);
 
   vec2 uv = css / view;
