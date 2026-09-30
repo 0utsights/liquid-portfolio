@@ -40,10 +40,11 @@ test('Both pages are complete static HTML with sharing metadata and no client ru
   assert.match(html, /<meta name="description" content="[^"]{30,}"/);
   assert.match(html, /<meta property="og:image" content="https:\/\/johnsurles.com\/images\/social-card.jpg">/);
   assert.equal([...html.matchAll(/aria-current="page"/g)].length, 1);
-  // Only inert JSON-LD and the deferred copy-button script; every copy button starts hidden.
-  for (const tag of html.matchAll(/<script\b[^>]*>/g)) assert.match(tag[0], /type="application\/ld\+json"|^<script src="\/copy\.js\?v=\w+" defer>$/, `Unexpected ${tag[0]}`);
-  const buttons = [...html.matchAll(/<button [^>]*data-copy="[^"]+"[^>]*>/g)].map(m => m[0]);
-  assert.ok(buttons.length >= 3 && buttons.every(b => b.includes(' hidden') && b.includes('aria-label="Copy ')), 'Copy buttons are labelled and hidden until the script runs');
+  // No client runtime: the only script is inert JSON-LD.
+  for (const tag of html.matchAll(/<script\b[^>]*>/g)) assert.match(tag[0], /type="application\/ld\+json"/, `Unexpected ${tag[0]}`);
+  // The header shows the real addresses, not generic labels.
+  const header = html.match(/<p class="masthead-links">(.*?)<\/p>/)[1];
+  for (const shown of ['>surlesjohn@outlook.com<', '>github.com/0utsights<', '>linkedin.com/in/john-surles-650a16389<']) assert.ok(header.includes(shown), `Header should show ${shown}`);
   for (const m of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)) JSON.parse(m[1]);
   assert.ok(!/lorem ipsum|TODO|placeholder|Loading/i.test(html));
   assert.ok(html.includes('John-Surles-Resume.pdf') && html.includes('mailto:surlesjohn@outlook.com'), 'Resume and email are in the header');
