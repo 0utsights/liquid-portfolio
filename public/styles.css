@@ -35,6 +35,16 @@ main { display: grid; gap: 8px; }
 .masthead-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 20px; margin-top: 12px; font-size: 15px; }
 .masthead-links a { padding: 6px 0; }
 
+/* Copy buttons (shown by copy.js) */
+.copyable { display: inline-flex; align-items: center; gap: 2px; }
+.copy { position: relative; display: inline-grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 4px; background: none; color: var(--muted); cursor: pointer; }
+.copy[hidden] { display: none; }
+.copy:hover { color: var(--ink); background: rgba(0, 0, 0, .06); }
+.copy svg { width: 15px; height: 15px; }
+.copy[data-state]::after { content: 'Copied'; position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); padding: 2px 8px; border-radius: 4px; background: var(--ink); color: #fff; font-size: 12px; line-height: 1.6; white-space: nowrap; pointer-events: none; }
+.copy[data-state=failed]::after { content: 'Press Ctrl+C'; }
+.link-list .copyable { gap: 4px; }
+
 /* Tabs */
 .tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .tabs a { display: block; padding: 14px; background: #fff; text-align: center; font-size: 15px; color: var(--muted); text-decoration: none; }

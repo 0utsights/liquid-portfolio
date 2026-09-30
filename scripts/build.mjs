@@ -6,7 +6,7 @@ import { profile, about, highlights, lookingFor, experience, projects, contribut
 const root = resolve(import.meta.dirname, '..');
 const output = join(root, 'dist');
 const version = async file => createHash('sha256').update(await readFile(join(root, file))).digest('hex').slice(0, 10);
-const v = {css: await version('public/styles.css'), resume: await version('public/John-Surles-Resume.pdf')};
+const v = {css: await version('public/styles.css'), js: await version('public/copy.js'), resume: await version('public/John-Surles-Resume.pdf')};
 await rm(output, {recursive: true, force: true});
 await mkdir(output, {recursive: true});
 await cp(join(root, 'public'), output, {recursive: true});
@@ -19,6 +19,14 @@ const esc = s => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').repl
 const ext = (label, href) => `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}<span class="sr-only"> (opens in a new tab)</span></a>`;
 const card = (id, heading, body) => `<section class="card"${id ? ` id="${id}"` : ''} aria-labelledby="${id || heading.toLowerCase().replace(/\W+/g, '-')}-title"><h2 id="${id || heading.toLowerCase().replace(/\W+/g, '-')}-title">${heading}</h2><div class="card-body">${body}</div></section>`;
 const list = items => `<ul>${items.map(x => `<li>${x}</li>`).join('')}</ul>`;
+// Contact links get a copy button; it stays hidden unless /copy.js runs, so the link alone still works.
+const copyIcon = '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="5.5" y="5.5" width="8.5" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 5.5V3.5A1.5 1.5 0 0 0 9 2H3.5A1.5 1.5 0 0 0 2 3.5V9a1.5 1.5 0 0 0 1.5 1.5h2" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>';
+const copyable = (link, value, what) => `<span class="copyable">${link}<button type="button" class="copy" data-copy="${value}" aria-label="Copy ${what}" title="Copy ${what}" hidden>${copyIcon}</button></span>`;
+const contacts = {
+ email: label => copyable(`<a href="${mail}">${label}</a>`, profile.email, 'email address'),
+ github: label => copyable(ext(label, profile.github), profile.github, 'GitHub link'),
+ linkedin: label => copyable(ext(label, profile.linkedin), profile.linkedin, 'LinkedIn link'),
+};
 const words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
 const count = contributions.length;
 const fill = text => text.replace('{count}', count).replace('{others}', words[count - 3] ?? count - 3);
@@ -35,7 +43,7 @@ const profilePage = [
  card('projects', 'Projects', projects.map(p => `<article class="entry" id="${p.id}"><div class="entry-head"><h3>${p.name}</h3><p class="entry-date">${p.date}</p></div><p>${p.summary}</p>${list(p.points)}<p class="meta">${p.stack}</p><p class="entry-links">${p.links.map(([l, h]) => ext(l, h)).join('')}${p.note ? `<span class="meta">${p.note}</span>` : ''}</p></article>`).join('')),
  card('education', 'Education', education.map(e => `<div class="entry entry-compact"><div class="entry-head"><h3>${e.school}</h3><p class="entry-date">${e.date}</p></div><p class="entry-org">${e.detail}</p></div>`).join('')),
  card('skills', 'Skills', `<p class="meta">Each skill links to where I’ve used it.</p><ul class="skills">${skills.map(([k, used]) => `<li><strong>${k}</strong><span>${used.map(([l, h]) => `<a href="${h}">${l}</a>`).join(', ')}</span></li>`).join('')}</ul><p class="meta">Also: ${alsoFamiliar}.</p>`),
- card('links', 'Links', `<ul class="link-list"><li><a href="${mail}">${profile.email}</a></li><li><a href="${profile.phoneHref}">${profile.phone}</a></li><li><a href="${resume}">Resume (PDF)</a></li><li>${ext('GitHub', profile.github)}</li><li>${ext('LinkedIn', profile.linkedin)}</li></ul>`),
+ card('links', 'Links', `<ul class="link-list"><li>${contacts.email(profile.email)}</li><li>${contacts.github(profile.github.replace('https://', ''))}</li><li>${contacts.linkedin(profile.linkedin.replace('https://www.', '').replace(/\/$/, ''))}</li><li><a href="${profile.phoneHref}">${profile.phone}</a></li><li><a href="${resume}">Resume (PDF)</a></li></ul>`),
 ].join('');
 
 const ossPage = [
@@ -62,7 +70,7 @@ function page(route) {
  const tab = (label, href, key) => `<a href="${href}"${route.key === key ? ' aria-current="page"' : ''}>${label}</a>`;
  return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#357c96"><title>${route.title}</title><meta name="description" content="${route.description}"><link rel="canonical" href="${url}"><meta property="og:type" content="website"><meta property="og:title" content="${route.title}"><meta property="og:description" content="${route.description}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="John Surles"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://johnsurles.com/images/social-card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="John Surles — Software Engineering Student, Virginia Tech"><meta name="twitter:card" content="summary_large_image"><meta name="author" content="John Surles"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="stylesheet" href="/styles.css?v=${v.css}">${route.key === 'profile' ? `<script type="application/ld+json">${JSON.stringify(profileData)}</script>` : ''}</head>
-<body><a class="skip-link" href="#main">Skip to content</a><div class="page"><header class="card masthead"><div class="mark" aria-hidden="true">JS</div><h1>${profile.name}</h1><p class="subtitle">${profile.title}</p><p class="status">Seeking a Summer 2027 software engineering internship · Graduating May 2028</p><p class="masthead-links"><a href="${resume}">Resume (PDF)</a><a href="${mail}">Email</a>${ext('GitHub', profile.github)}${ext('LinkedIn', profile.linkedin)}</p></header><nav class="tabs" aria-label="Sections">${tab('Profile', '/', 'profile')}${tab('Open Source', '/oss/', 'oss')}</nav><main id="main" tabindex="-1">${route.body}</main><footer class="card footer"><p>© 2026 John Surles</p></footer></div></body></html>`;
+<body><a class="skip-link" href="#main">Skip to content</a><div class="page"><header class="card masthead"><div class="mark" aria-hidden="true">JS</div><h1>${profile.name}</h1><p class="subtitle">${profile.title}</p><p class="status">Seeking a Summer 2027 software engineering internship · Graduating May 2028</p><p class="masthead-links"><a href="${resume}">Resume (PDF)</a>${contacts.email('Email')}${contacts.github('GitHub')}${contacts.linkedin('LinkedIn')}</p></header><nav class="tabs" aria-label="Sections">${tab('Profile', '/', 'profile')}${tab('Open Source', '/oss/', 'oss')}</nav><main id="main" tabindex="-1">${route.body}</main><footer class="card footer"><p>© 2026 John Surles</p></footer></div><p id="copy-status" class="sr-only" aria-live="polite"></p><script src="/copy.js?v=${v.js}" defer></script></body></html>`;
 }
 
 for (const route of routes) {
