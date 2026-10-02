@@ -92,7 +92,7 @@ export const projects = [
       'Developed the body using **Rigidbody2D, distance joints, and springs**, with shape recovery, compression pressure, and a procedural mesh for deformation.',
       'Implemented buffered jumping, coyote time, full-body reset, and contact-aware force handling; built a sandbox for slopes, landings, and tight spaces.',
     ],
-    links: [], note: 'Source code is private. A playable build has not yet been published.',
+    links: [['GitHub', 'https://github.com/0utsights/slime-physics-sandbox']], note: 'A playable build has not yet been published.',
   },
 ];
 
