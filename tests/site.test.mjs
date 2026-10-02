@@ -12,7 +12,7 @@ const read = p => readFile(join(dist, p), 'utf8');
 
 test('Every internal link, anchor, asset, and redirect target exists', async () => {
  const htmlFiles = (await files(dist)).filter(p => p.endsWith('.html'));
- assert.equal(htmlFiles.length, 11);
+ assert.equal(htmlFiles.length, 12);
  for (const file of htmlFiles) {
   const html = await readFile(file, 'utf8');
   const paths = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map(m => m[1]);

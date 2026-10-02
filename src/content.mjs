@@ -69,7 +69,7 @@ export const projects = [
   },
   {
     id: 'aeyori', name: 'Aeyori', date: 'March 2026–Present', stack: 'Python, FastAPI, EasyOCR, Selenium, PostgreSQL',
-    summary: 'An open-source **Python** client for the Discord card game Karuta that coordinates card-image **OCR** and scheduled workflows.',
+    summary: 'An experimental, open-source **Python** automation client for the Discord card game Karuta, combining card-image **OCR** with scheduled user-account actions.',
     points: [
       'Built the **EasyOCR** pipeline and workflow coordinator with cooldown handling, independent profiles, and activity logs.',
       'Packaged it for Windows with **PyInstaller**; an earlier hosted version had a **FastAPI** backend with authentication and license keys.',
@@ -84,6 +84,15 @@ export const projects = [
       'Derives container placement from live **Docker** state and flags agent heartbeats older than 90 seconds as stale.',
     ],
     links: [['GitHub', 'https://github.com/0utsights/opsdeck']],
+  },
+  {
+    id: 'slime-physics-sandbox', name: 'Slime Physics Sandbox', date: 'April 2026', stack: 'Unity, C#, Rigidbody2D, procedural mesh',
+    summary: 'A **Unity / C#** soft-body physics prototype focused on slime deformation and movement through a 2D environment.',
+    points: [
+      'Developed the body using **Rigidbody2D, distance joints, and springs**, with shape recovery, compression pressure, and a procedural mesh for deformation.',
+      'Implemented buffered jumping, coyote time, full-body reset, and contact-aware force handling; built a sandbox for slopes, landings, and tight spaces.',
+    ],
+    links: [], note: 'Source code is private. A playable build has not yet been published.',
   },
 ];
 
@@ -159,6 +168,7 @@ export const skills = [
   ['Python', [['Aeyori', '/#aeyori'], ['Omnigent PR', '/oss/#omnigent']]],
   ['Java', [['LegendWatch', '/#legendwatch']]],
   ['Go', [['OpsDeck', '/#opsdeck']]],
+  ['Unity', [['Slime Physics Sandbox', '/#slime-physics-sandbox']]],
   ['SQL & PostgreSQL', [['Procentrix (SQL Server)', '/#procentrix'], ['Deepwoken.trade', '/#deepwoken-trade']]],
   ['Kotlin, C#, Rust, JavaScript', [['OpenTelemetry PR', '/oss/#opentelemetry-kotlin'], ['PowerToys PR', '/oss/#powertoys'], ['GitType PR', '/oss/#gittype'], ['MMGIS PR', '/oss/#mmgis']]],
   ['React, Next.js, Node.js, FastAPI', [['Procentrix', '/#procentrix'], ['Deepwoken.trade', '/#deepwoken-trade'], ['Aeyori', '/#aeyori']]],
